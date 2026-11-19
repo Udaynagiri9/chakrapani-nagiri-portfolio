@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Production build
+dist
+dist-ssr
+
+# Local user source duplicate assets (served from public/)
+/audio songs
+/video songs
+/photos
+/media
+
+# Local test screenshots & scripts
+/test_shots
+test-*.mjs
+sample-*.mjs
+extract-*.mjs
+verify-*.mjs
+footer_credit_*.png
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor directories
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
