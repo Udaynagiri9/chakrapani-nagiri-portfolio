@@ -81,37 +81,37 @@ export const About: React.FC = () => {
                 {/* Quick Info Grid below image */}
                 <div className="p-6 space-y-3.5 bg-gradient-to-b from-bg-card to-black/60">
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-accent-highlight shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-accent-highlight shrink-0 mt-1" />
                     <div>
-                      <span className="text-[11px] font-semibold text-text-muted uppercase tracking-wider block">
+                      <span className="text-xs font-semibold text-text-muted uppercase tracking-wider block">
                         {t.hometownLabel}
                       </span>
-                      <p className="text-xs sm:text-sm text-white/90 font-medium">
+                      <p className="text-sm sm:text-base text-white font-medium mt-0.5">
                         {t.hometownVal}
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 pt-2 border-t border-white/5">
-                    <div className="flex items-start gap-2">
-                      <Shield className="w-3.5 h-3.5 text-accent-highlight shrink-0 mt-0.5" />
+                  <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/5">
+                    <div className="flex items-start gap-2.5">
+                      <Shield className="w-4 h-4 text-accent-highlight shrink-0 mt-0.5" />
                       <div>
-                        <span className="text-[10px] text-text-muted uppercase tracking-wider block">
+                        <span className="text-xs text-text-muted uppercase tracking-wider block font-semibold">
                           {t.serviceLabel}
                         </span>
-                        <p className="text-xs font-medium text-white/90">
+                        <p className="text-xs sm:text-sm font-medium text-white/95 mt-0.5">
                           {t.serviceVal}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-2">
-                      <Music className="w-3.5 h-3.5 text-red-400 shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2.5">
+                      <Music className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
                       <div>
-                        <span className="text-[10px] text-text-muted uppercase tracking-wider block">
+                        <span className="text-xs text-text-muted uppercase tracking-wider block font-semibold">
                           {t.recognitionLabel}
                         </span>
-                        <p className="text-xs font-medium text-white/90">
+                        <p className="text-xs sm:text-sm font-medium text-white/95 mt-0.5">
                           {t.recognitionVal}
                         </p>
                       </div>
@@ -141,7 +141,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Narrative Paragraphs */}
-            <div className="space-y-4 text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
+            <div className="space-y-4 text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
               <p>{t.p1}</p>
               <p>{t.p2}</p>
               <p>{t.p3}</p>
@@ -149,38 +149,38 @@ export const About: React.FC = () => {
 
             {/* 3 Core Values / Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-accent-highlight/30 transition-colors">
-                <div className="w-8 h-8 rounded-xl bg-accent-red/20 flex items-center justify-center text-accent-highlight mb-2">
-                  <Shield className="w-4 h-4" />
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-accent-red/20 flex items-center justify-center text-accent-highlight mb-2.5">
+                  <Shield className="w-5 h-5" />
                 </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                   {isTelugu ? 'దేశ రక్షణ' : 'National Service'}
                 </h4>
-                <p className="text-[11px] text-text-secondary mt-1">
+                <p className="text-xs sm:text-sm text-text-secondary mt-1">
                   {isTelugu ? 'సరిహద్దుల్లో రక్షణ విధుల్లో నిరంతర అప్రమత్తత.' : 'Unwavering border watch with iron discipline.'}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-accent-highlight/30 transition-colors">
-                <div className="w-8 h-8 rounded-xl bg-red-950/50 flex items-center justify-center text-red-400 mb-2">
-                  <Music className="w-4 h-4" />
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-red-950/50 flex items-center justify-center text-red-400 mb-2.5">
+                  <Music className="w-5 h-5" />
                 </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                   {isTelugu ? 'సంగీత సాధన' : 'Musical Soul'}
                 </h4>
-                <p className="text-[11px] text-text-secondary mt-1">
+                <p className="text-xs sm:text-sm text-text-secondary mt-1">
                   {isTelugu ? 'సెలవుల్లోనూ తీరిక వేళల్లోనూ స్వర తపస్సు.' : 'Soulful melodies nurtured during precious leave.'}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-accent-highlight/30 transition-colors">
-                <div className="w-8 h-8 rounded-xl bg-amber-950/50 flex items-center justify-center text-amber-400 mb-2">
-                  <Heart className="w-4 h-4" />
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-amber-950/50 flex items-center justify-center text-amber-400 mb-2.5">
+                  <Heart className="w-5 h-5" />
                 </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                   {isTelugu ? 'పల్లె మూలాలు' : 'Srikakulam Pride'}
                 </h4>
-                <p className="text-[11px] text-text-secondary mt-1">
+                <p className="text-xs sm:text-sm text-text-secondary mt-1">
                   {isTelugu ? 'మందస మండలం పొత్తంగి మట్టి పరిమళం.' : 'Grounded deeply in his ancestral village roots.'}
                 </p>
               </div>

@@ -95,24 +95,24 @@ export const Contact: React.FC = () => {
                 >
                   {isTelugu ? 'చక్రపాణి నాగిరి' : 'CHAKRAPANI NAGIRI'}
                 </h3>
-                <p className="text-xs text-text-secondary font-helvetica">
+                <p className="text-sm text-neutral-400 font-helvetica">
                   BSF Soldier & Vocal Artist
                 </p>
               </div>
 
               {/* Verified Email Card */}
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-semibold text-accent-highlight uppercase tracking-wider font-helvetica">
+              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2">
+                <div className="flex items-center gap-2 text-sm font-bold text-accent-highlight uppercase tracking-wider font-helvetica">
                   <Mail className="w-4 h-4" />
                   <span>{t.officialEmail}</span>
                 </div>
                 <a
                   href="mailto:chakrapaninagiri@gmail.com"
-                  className="text-base sm:text-lg font-bold text-white hover:text-accent-highlight transition-colors block break-all font-helvetica"
+                  className="text-lg sm:text-xl font-bold text-white hover:text-accent-highlight transition-colors block break-all font-helvetica"
                 >
                   chakrapaninagiri@gmail.com
                 </a>
-                <p className="text-[11px] text-text-secondary">
+                <p className="text-xs sm:text-sm text-text-secondary">
                   {isTelugu
                     ? 'కార్యక్రమాలు & అధికారిక సమాచారం కోసం నేరుగా మెయిల్ చేయవచ్చు'
                     : 'Direct inbox for performances, media and cultural invitations'}
@@ -120,16 +120,16 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Verified Hometown Details */}
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2 font-helvetica">
-                <div className="flex items-center gap-2 text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2 font-helvetica">
+                <div className="flex items-center gap-2 text-sm font-bold text-neutral-300 uppercase tracking-wider">
                   <MapPin className="w-4 h-4 text-accent-highlight" />
                   <span>{t.hometown}</span>
                 </div>
-                <p className="text-sm font-medium text-white/95 leading-relaxed">
+                <p className="text-base font-medium text-white/95 leading-relaxed">
                   {t.hometownFull}
                 </p>
-                <div className="flex items-center gap-2 pt-1 text-[11px] text-neutral-400">
-                  <Shield className="w-3.5 h-3.5 text-accent-highlight" />
+                <div className="flex items-center gap-2 pt-1 text-xs sm:text-sm text-neutral-400">
+                  <Shield className="w-4 h-4 text-accent-highlight" />
                   <span>{isTelugu ? 'ఆంధ్రప్రదేశ్ - శ్రీకాకుళం జిల్లా' : 'Srikakulam District, Andhra Pradesh'}</span>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Note regarding military duty */}
-            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 text-xs text-text-secondary leading-relaxed">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 text-sm text-neutral-300 leading-relaxed">
               <span className="font-semibold text-white">
                 {isTelugu ? 'గమనిక:' : 'Please Note:'}
               </span>{' '}
@@ -233,7 +233,7 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-text-secondary">
+                      <label className="text-sm font-semibold text-neutral-300">
                         {t.form.name} *
                       </label>
                       <input
@@ -242,13 +242,13 @@ export const Contact: React.FC = () => {
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder={isTelugu ? 'మీ పూర్తి పేరు' : 'John Doe'}
-                        className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-base transition-all"
                       />
                     </div>
 
                     {/* Email */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-text-secondary">
+                      <label className="text-sm font-semibold text-neutral-300">
                         {t.form.email} *
                       </label>
                       <input
@@ -257,7 +257,7 @@ export const Contact: React.FC = () => {
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="example@mail.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-base transition-all"
                       />
                     </div>
                   </div>
@@ -265,7 +265,7 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Phone */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-text-secondary">
+                      <label className="text-sm font-semibold text-neutral-300">
                         {t.form.phone}
                       </label>
                       <input
@@ -273,20 +273,20 @@ export const Contact: React.FC = () => {
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-base transition-all"
                       />
                     </div>
 
                     {/* Purpose Selector with Custom Styled Dropdown Chevron */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-text-secondary">
+                      <label className="text-sm font-semibold text-neutral-300">
                         {t.form.purpose}
                       </label>
                       <div className="relative">
                         <select
                           value={formState.purpose}
                           onChange={(e) => setFormState({ ...formState, purpose: e.target.value })}
-                          className="w-full px-4 py-3 pr-10 rounded-xl bg-neutral-900 border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all cursor-pointer appearance-none"
+                          className="w-full px-4 py-3.5 pr-10 rounded-xl bg-neutral-900 border border-white/10 focus:border-accent-highlight outline-none text-white text-base transition-all cursor-pointer appearance-none"
                         >
                           {t.form.purposeOptions.map((opt, i) => (
                             <option key={i} value={opt} className="bg-neutral-900 text-white py-2">
@@ -303,7 +303,7 @@ export const Contact: React.FC = () => {
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label className="text-xs font-medium text-text-secondary">
+                    <label className="text-sm font-semibold text-neutral-300">
                       {t.form.message} *
                     </label>
                     <textarea
@@ -316,7 +316,7 @@ export const Contact: React.FC = () => {
                           ? 'కార్యక్రమ తేదీ, వేదిక మరియు వివరాలను ఇక్కడ రాయండి...'
                           : 'Provide event details, date, location or your message here...'
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all resize-none"
+                      className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-base transition-all resize-none"
                     />
                   </div>
 

@@ -107,15 +107,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
               <div className="flex items-center gap-1.5">
                 <span
                   style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
-                  className="font-helvetica font-bold text-white tracking-wider text-[11px] sm:text-sm group-hover:text-accent-highlight transition-colors uppercase leading-none"
+                  className="font-helvetica font-bold text-white tracking-wider text-xs sm:text-base group-hover:text-accent-highlight transition-colors uppercase leading-none"
                 >
                   {isTelugu ? 'చక్రపాణి నాగిరి' : 'CHAKRAPANI NAGIRI'}
                 </span>
-                <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[8px] sm:text-[9px] font-semibold bg-accent-red/20 text-accent-highlight border border-accent-red/30 font-helvetica">
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-semibold bg-accent-red/20 text-accent-highlight border border-accent-red/30 font-helvetica">
                   BSF
                 </span>
               </div>
-              <p className="text-[10px] text-text-secondary tracking-widest uppercase hidden sm:flex items-center gap-1 font-helvetica mt-0.5">
+              <p className="text-[11px] sm:text-xs text-text-secondary tracking-widest uppercase hidden sm:flex items-center gap-1.5 font-helvetica mt-0.5">
                 <span>BSF Soldier</span>
                 <span className="text-accent-highlight">•</span>
                 <span>Singer</span>
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
                 <button
                   key={link.id}
                   onClick={() => handleLinkClick(link.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 relative cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all duration-200 relative cursor-pointer ${
                     isActive
                       ? 'text-white bg-accent-red/40 border border-accent-highlight/50'
                       : link.isSpecial

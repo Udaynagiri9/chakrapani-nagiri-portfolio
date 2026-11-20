@@ -145,10 +145,10 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                 <div className="space-y-3">
                   {/* Top Bar: Source Badge & Date */}
                   <div className="flex items-center justify-between">
-                    <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider border font-helvetica ${article.sourceBadgeColor}`}>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border font-helvetica ${article.sourceBadgeColor}`}>
                       {article.source}
                     </span>
-                    <span className="text-[11px] text-text-muted font-helvetica">
+                    <span className="text-xs text-text-muted font-helvetica">
                       {article.date}
                     </span>
                   </div>
@@ -159,14 +159,14 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-xs text-text-secondary leading-relaxed font-sans line-clamp-3">
+                  <p className="text-sm text-neutral-300 leading-relaxed font-sans line-clamp-3">
                     {article.summary[language]}
                   </p>
                 </div>
 
                 {/* Bottom Action: Redirect Link */}
                 <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[11px] text-text-muted font-helvetica">
+                  <span className="text-xs text-text-muted font-helvetica">
                     {article.readTime || 'Verified News'}
                   </span>
 
@@ -244,7 +244,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                     <h3 className="text-base font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors line-clamp-2">
                       {interview.title[language]}
                     </h3>
-                    <p className="text-xs text-text-secondary leading-relaxed font-sans mt-2 line-clamp-3">
+                    <p className="text-sm text-neutral-300 leading-relaxed font-sans mt-2 line-clamp-3">
                       {interview.description[language]}
                     </p>
                   </div>
@@ -253,7 +253,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   <div className="pt-4 border-t border-white/5 flex items-center justify-between font-helvetica">
                     <button
                       onClick={() => onOpenVideoModal(undefined, interview.youtubeId, interview.title[language])}
-                      className="text-xs font-bold text-accent-highlight hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="text-sm font-bold text-accent-highlight hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <Play className="w-3.5 h-3.5 fill-current" />
                       <span>{isTelugu ? 'వీడియో చూడండి' : 'Watch Interview'}</span>

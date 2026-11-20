@@ -99,7 +99,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-colors duration-200 cursor-pointer ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-200 cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-accent-red text-white border border-accent-highlight font-bold'
                   : 'bg-white/5 text-text-secondary hover:text-white hover:bg-white/10 border border-white/10'
@@ -186,31 +186,31 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
                       </h3>
 
                       {song.composer && (
-                        <p className="text-xs text-accent-highlight font-medium mt-1 font-helvetica">
+                        <p className="text-xs sm:text-sm text-accent-highlight font-semibold mt-1 font-helvetica">
                           {song.composer[language]}
                         </p>
                       )}
 
-                      <p className="text-xs text-text-secondary mt-2 line-clamp-2 leading-relaxed font-sans">
+                      <p className="text-xs sm:text-sm text-neutral-300 mt-2 line-clamp-2 leading-relaxed font-sans">
                         {song.description[language]}
                       </p>
                     </div>
 
                     {/* Bottom Actions: Audio Play & Video Watch */}
-                    <div className="pt-4 border-t border-white/5 flex items-center justify-between font-helvetica">
+                    <div className="pt-4 border-t border-white/10 flex items-center justify-between font-helvetica">
                       {/* Audio Play/Pause Button */}
                       <button
                         onClick={() => togglePlayAudio(song)}
-                        className="text-xs font-semibold text-white hover:text-accent-highlight flex items-center gap-1.5 transition-colors cursor-pointer"
+                        className="text-xs sm:text-sm font-semibold text-white hover:text-accent-highlight flex items-center gap-1.5 transition-colors cursor-pointer"
                       >
                         {isPlaying ? (
                           <>
-                            <Pause className="w-3.5 h-3.5 fill-current text-accent-highlight" />
+                            <Pause className="w-4 h-4 fill-current text-accent-highlight" />
                             <span>{t.pauseTrack}</span>
                           </>
                         ) : (
                           <>
-                            <Play className="w-3.5 h-3.5 fill-current text-accent-highlight" />
+                            <Play className="w-4 h-4 fill-current text-accent-highlight" />
                             <span>{t.playTrack}</span>
                           </>
                         )}
@@ -224,9 +224,9 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
                               onOpenVideoModal(song.videoUrl, undefined, song.title[language]);
                             }
                           }}
-                          className="text-xs font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+                          className="text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                         >
-                          <Film className="w-3.5 h-3.5 text-accent-highlight" />
+                          <Film className="w-4 h-4 text-accent-highlight" />
                           <span>{isTelugu ? 'వీడియో చూడండి' : 'Watch Video'}</span>
                         </button>
                       )}

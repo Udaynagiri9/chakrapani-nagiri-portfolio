@@ -72,11 +72,11 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
                 </div>
 
                 {/* Bottom Subtitle */}
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90 font-helvetica">
-                  <span className="font-medium bg-black/60 px-2.5 py-1 rounded-md backdrop-blur-sm truncate max-w-[70%]">
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs sm:text-sm text-white/90 font-helvetica">
+                  <span className="font-medium bg-black/70 px-3 py-1 rounded-lg backdrop-blur-md truncate max-w-[70%]">
                     {item.subtitle[language]}
                   </span>
-                  <span className="text-[11px] text-text-secondary">
+                  <span className="text-xs text-text-secondary">
                     {t.watchModal}
                   </span>
                 </div>
@@ -84,23 +84,23 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
 
               {/* Performance Info */}
               <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="text-xl font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors">
+                <h3 className="text-xl sm:text-2xl font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors">
                   {item.title[language]}
                 </h3>
-                <p className="text-sm text-text-secondary leading-relaxed font-sans">
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
                   {item.description[language]}
                 </p>
 
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between font-helvetica">
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between font-helvetica">
                   <button
                     onClick={() => onOpenVideoModal(item.localVideo, item.youtubeId, item.title[language])}
-                    className="text-xs font-bold text-accent-highlight hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="text-sm font-bold text-accent-highlight hover:text-white flex items-center gap-2 transition-colors cursor-pointer"
                   >
-                    <Play className="w-3.5 h-3.5 fill-current" />
+                    <Play className="w-4 h-4 fill-current" />
                     <span>{t.watchModal}</span>
                   </button>
 
-                  <span className="text-[11px] text-text-muted">
+                  <span className="text-xs text-text-muted">
                     {isTelugu ? 'అధికారిక ఫుటేజ్' : 'Verified Video'}
                   </span>
                 </div>

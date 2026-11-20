@@ -149,13 +149,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar (Clean Credit & Navigation) */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted font-helvetica text-center md:text-left">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-text-muted font-helvetica text-center md:text-left">
           <p>
             © {new Date().getFullYear()} {isTelugu ? 'చక్రపాణి నాగిరి' : 'CHAKRAPANI NAGIRI'}. {t.rights}
           </p>
 
           {/* Designed & Developed by Uday Nagiri Credit */}
-          <div className="flex items-center gap-1.5 text-neutral-400">
+          <div className="flex items-center gap-1.5 text-neutral-300">
             <span>{isTelugu ? 'రూపకల్పన & అభివృద్ధి:' : 'Designed & Developed by'}</span>
             <a
               href="https://udaynagiri.netmaxin.in"
@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               className="font-bold text-accent-highlight hover:text-white transition-colors inline-flex items-center gap-1 cursor-pointer underline decoration-accent-highlight/40 hover:decoration-white"
             >
               <span>Uday Nagiri</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
 

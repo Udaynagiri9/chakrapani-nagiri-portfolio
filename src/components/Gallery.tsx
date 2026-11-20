@@ -74,7 +74,7 @@ export const Gallery: React.FC = () => {
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeFilter === f.id
                   ? 'bg-accent-red text-white shadow-lg shadow-accent-red/40 border border-accent-highlight/50'
                   : 'bg-white/5 text-text-secondary hover:text-white hover:bg-white/10 border border-white/5'
@@ -121,10 +121,10 @@ export const Gallery: React.FC = () => {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-accent-highlight">
                     {photo.category}
                   </span>
-                  <h3 className="text-base font-bold text-white group-hover:text-accent-highlight transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent-highlight transition-colors">
                     {photo.title[language]}
                   </h3>
-                  <p className="text-xs text-text-secondary line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs sm:text-sm text-neutral-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
                     {photo.caption[language]}
                   </p>
                 </div>

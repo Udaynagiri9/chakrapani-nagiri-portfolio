@@ -682,23 +682,23 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-red/20 border border-accent-red/40 text-accent-highlight text-xs font-bold uppercase tracking-wider font-helvetica">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-red/20 border border-accent-red/40 text-accent-highlight text-xs sm:text-sm font-bold uppercase tracking-wider font-helvetica">
+                <Sparkles className="w-4 h-4" />
                 <span>{t.standingOvationTitle}</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-helvetica font-bold text-white leading-snug">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-helvetica font-bold text-white leading-snug">
                 {isTelugu
                   ? 'సరిహద్దు సైనికుడి గానానికి న్యాయనిర్ణేతల లేచి నిలబడి చేసిన వందనం'
                   : 'Standing Ovation and Military Salute from Esteemed Music Titans'}
               </h3>
 
-              <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+              <p className="text-base sm:text-lg text-text-secondary leading-relaxed font-sans">
                 {t.standingOvationDesc}
               </p>
 
               {/* Master names */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2.5 pt-2">
                 {[
                   'S.S. Thaman',
                   'Karthik',
@@ -708,7 +708,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                 ].map((name, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-xs font-medium font-helvetica bg-white/5 border border-white/10 text-neutral-300"
+                    className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold font-helvetica bg-white/5 border border-white/15 text-neutral-200 hover:border-accent-highlight/40 transition-colors"
                   >
                     ★ {name}
                   </span>
@@ -717,13 +717,13 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
             </div>
 
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl max-w-xs group">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl max-w-sm group">
                 <img
                   src="/images/thaman_applause.jpg"
                   alt="Composer Thaman Applauds Chakrapani"
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-0 inset-x-0 p-3 bg-black/80 backdrop-blur-md text-[11px] text-white/90 text-center font-medium font-helvetica">
+                <div className="absolute bottom-0 inset-x-0 p-3 bg-black/85 backdrop-blur-md text-xs sm:text-sm text-white text-center font-medium font-helvetica">
                   {isTelugu ? 'ఎస్.ఎస్. థమన్ చప్పట్లతో సత్కారం' : 'Maestro Thaman Standing Ovation'}
                 </div>
               </div>
