@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <video
               ref={videoRef}
-              src="/videos/hero_performance.mp4"
+              src="/videos/hero_loop.mp4"
               autoPlay
               loop
               muted={videoMuted}

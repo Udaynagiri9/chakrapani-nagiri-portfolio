@@ -71,23 +71,23 @@ export const SocialMedia: React.FC = () => {
             </div>
 
             {/* Verified Stats Row */}
-            <div className="grid grid-cols-3 gap-3 p-5 rounded-2xl bg-white/[0.04] border border-white/10 text-center">
+            <div className="grid grid-cols-3 gap-2.5 p-4 rounded-2xl bg-white/[0.04] border border-white/10 text-center">
               <div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white block">480+</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">Posts</span>
+                <span className="text-xl sm:text-2xl font-bold text-white block">480+</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">Posts</span>
               </div>
               <div className="border-x border-white/10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-pink-400 block">305K+</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">{t.followers}</span>
+                <span className="text-xl sm:text-2xl font-bold text-pink-400 block">305K+</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">{t.followers}</span>
               </div>
               <div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white block">Top 7</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">Idol S2</span>
+                <span className="text-xl sm:text-2xl font-bold text-white block">Top 7</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">Idol S2</span>
               </div>
             </div>
 
             {/* Bio quote snippet */}
-            <p className="text-sm sm:text-base text-neutral-200 leading-relaxed italic bg-black/50 p-4 rounded-2xl border border-white/10">
+            <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed italic bg-black/50 p-3.5 rounded-2xl border border-white/10">
               “INprofessionally BSF soldier • 🎤 Passion SINGING 🎤 • TELUGU INDIAN IDOL S 2 TOP 7”
             </p>
 
@@ -96,11 +96,11 @@ export const SocialMedia: React.FC = () => {
               href="https://www.instagram.com/chakrapani_soldier_official/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 rounded-2xl font-bold text-base text-white bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 hover:opacity-90 transition-all flex items-center justify-center gap-2 font-helvetica shadow-lg shadow-pink-600/25"
+              className="w-full py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 hover:opacity-90 transition-all flex items-center justify-center gap-2 font-helvetica shadow-lg shadow-pink-600/25"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-4 h-4" />
               <span>{t.instagramBtn}</span>
-              <ExternalLink className="w-4 h-4 ml-1" />
+              <ExternalLink className="w-3.5 h-3.5 ml-1" />
             </a>
           </motion.div>
 
@@ -110,7 +110,7 @@ export const SocialMedia: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-bg-card border border-white/10 hover:border-red-500/40 p-8 sm:p-10 transition-all duration-300 shadow-2xl space-y-6 group relative overflow-hidden"
+            className="rounded-3xl bg-bg-card border border-white/10 hover:border-red-500/40 p-6 sm:p-8 transition-all duration-300 shadow-2xl space-y-5 group relative overflow-hidden"
           >
             {/* Ambient Red Glow */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -118,7 +118,7 @@ export const SocialMedia: React.FC = () => {
             {/* Profile Snapshot Header */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full p-0.5 bg-red-600 shrink-0">
+                <div className="w-14 h-14 rounded-full p-0.5 bg-red-600 shrink-0">
                   <div className="w-full h-full rounded-full overflow-hidden bg-black">
                     <img
                       src="/images/bsf_singing_idol.jpg"
@@ -129,40 +129,40 @@ export const SocialMedia: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h3 className="font-bold text-white text-lg sm:text-xl">
+                    <h3 className="font-bold text-white text-base sm:text-lg">
                       Chakrapani Nagiri
                     </h3>
-                    <CheckCircle2 className="w-5 h-5 text-red-500 fill-red-500/20 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-red-500 fill-red-500/20 shrink-0" />
                   </div>
-                  <p className="text-sm text-text-secondary mt-0.5">
+                  <p className="text-xs text-text-secondary mt-0.5">
                     @chakrapaninagiri3874
                   </p>
                 </div>
               </div>
 
-              <div className="w-12 h-12 rounded-2xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 shrink-0">
-                <Youtube className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-2xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 shrink-0">
+                <Youtube className="w-5 h-5" />
               </div>
             </div>
 
             {/* Verified Stats Row */}
-            <div className="grid grid-cols-3 gap-3 p-5 rounded-2xl bg-white/[0.04] border border-white/10 text-center">
+            <div className="grid grid-cols-3 gap-2.5 p-4 rounded-2xl bg-white/[0.04] border border-white/10 text-center">
               <div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white block">230+</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">Videos</span>
+                <span className="text-xl sm:text-2xl font-bold text-white block">230+</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">Videos</span>
               </div>
               <div className="border-x border-white/10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-red-400 block">127K+</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">{t.subscribers}</span>
+                <span className="text-xl sm:text-2xl font-bold text-red-400 block">127K+</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">{t.subscribers}</span>
               </div>
               <div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white block">Silver</span>
-                <span className="text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider mt-1 block">Creator</span>
+                <span className="text-xl sm:text-2xl font-bold text-white block">Silver</span>
+                <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mt-0.5 block">Creator</span>
               </div>
             </div>
 
             {/* Banner snippet */}
-            <p className="text-sm sm:text-base text-neutral-200 leading-relaxed italic bg-black/50 p-4 rounded-2xl border border-white/10">
+            <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed italic bg-black/50 p-3.5 rounded-2xl border border-white/10">
               “A PROFESSIONAL SOLDIER WITH A MELODIC SOUL • 100K+ SUBSCRIBERS”
             </p>
 
@@ -171,11 +171,11 @@ export const SocialMedia: React.FC = () => {
               href="https://youtube.com/@chakrapaninagiri3874"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 rounded-2xl font-bold text-base text-white bg-red-600 hover:bg-red-700 transition-all flex items-center justify-center gap-2 font-helvetica shadow-lg shadow-red-600/25"
+              className="w-full py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-red-600 hover:bg-red-700 transition-all flex items-center justify-center gap-2 font-helvetica shadow-lg shadow-red-600/25"
             >
-              <Youtube className="w-5 h-5" />
+              <Youtube className="w-4 h-4" />
               <span>{t.youtubeBtn}</span>
-              <ExternalLink className="w-4 h-4 ml-1" />
+              <ExternalLink className="w-3.5 h-3.5 ml-1" />
             </a>
           </motion.div>
 
