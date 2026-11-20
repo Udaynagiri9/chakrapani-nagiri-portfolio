@@ -77,7 +77,7 @@ export const journeyMilestones: JourneyMilestone[] = [
       te: "కఠినమైన శిక్షణ పూర్తిచేసి దేశ సరిహద్దుల రక్షణ బాధ్యతను స్వీకరించారు. విధుల్లో అంకితభావం, దేశభక్తి ఆయన నిత్య జీవనంలో భాగమయ్యాయి.",
       en: "Underwent rigorous military training and stood guard at the nation's critical frontiers, embracing discipline, duty, and patriotism as the core of his life.",
     },
-    image: "/images/soldier_portrait_cinematic.jpg",
+    image: "/images/bsf_camo_outdoor.jpg",
     tag: { te: "దేశ రక్షణ", en: "Military Service" },
   },
   {
@@ -356,6 +356,28 @@ export const performancesData: PerformanceItem[] = [
 ];
 
 export const galleryPhotos: GalleryPhoto[] = [
+  {
+    id: "gal-bsf-camo",
+    title: { te: "బీఎస్ఎఫ్ సైనికుడిగా చక్రపాణి", en: "BSF Soldier Chakrapani Nagiri" },
+    category: "soldier",
+    src: "/images/bsf_camo_outdoor.jpg",
+    span: "col-span-1 row-span-2",
+    caption: {
+      te: "బోర్డర్ సెక్యూరిటీ ఫోర్స్ (BSF) కామో యూనిఫాంలో గర్వంగా నిలిచిన చక్రపాణి నాగిరి.",
+      en: "BSF Jawan Chakrapani Nagiri standing tall and proud in full military camouflage uniform.",
+    },
+  },
+  {
+    id: "gal-bsf-stage",
+    title: { te: "సైనిక దుస్తుల్లో స్వర ఝరి", en: "Singing in BSF Uniform" },
+    category: "soldier",
+    src: "/images/bsf_stage_uniform.jpg",
+    span: "col-span-1 row-span-2",
+    caption: {
+      te: "సైనిక యూనిఫాంలో స్వర్ణ మైక్ పట్టి వేదికపై భక్తిభావంతో గానం చేస్తున్న అపురూప దృశ్యం.",
+      en: "Singing passionately on stage with the golden microphone while proudly donning the BSF uniform.",
+    },
+  },
   {
     id: "gal-1",
     title: { te: "దేశ సరిహద్దుల్లో సైనికుడు", en: "Guarding National Frontiers" },

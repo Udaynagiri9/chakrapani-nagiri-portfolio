@@ -133,7 +133,7 @@ export const translations = {
       subtitle: "సైనిక దుస్తుల్లో దేశ రక్షణ దృశ్యాలు, వేదికపై సంగీత ప్రదర్శనల అరుదైన చిత్రాలు.",
       filters: {
         all: "అన్నీ",
-        soldier: "సైనిక జీవితం",
+        soldier: "బీఎస్ఎఫ్ & సైనిక జీవితం",
         stage: "వేదిక ప్రదర్శనలు",
         idol: "ఇండియన్ ఐడల్ క్షణాలు",
         personal: "ప్రత్యేక జ్ఞాపకాలు",
@@ -319,7 +319,7 @@ export const translations = {
       subtitle: "Authentic moments from military duty, Indian Idol stages, and live performances.",
       filters: {
         all: "All",
-        soldier: "Soldier Life",
+        soldier: "BSF & Soldier Life",
         stage: "Live Stages",
         idol: "Indian Idol",
         personal: "Memories",

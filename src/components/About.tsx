@@ -49,8 +49,8 @@ export const About: React.FC = () => {
                 {/* Photo: Dual Identity Fusion (Stage & BSF) */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
-                    src="/images/web_stage_performance_2.jpg"
-                    alt="Chakrapani Nagiri Singing on Stage"
+                    src="/images/bsf_stage_uniform.jpg"
+                    alt="Chakrapani Nagiri Singing in BSF Uniform"
                     className="w-full h-full object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-black/30 to-transparent" />

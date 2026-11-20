@@ -119,9 +119,9 @@ export const TwoWorlds: React.FC = () => {
               {/* Authentic Crisp Portrait: Chakrapani in BSF Uniform with Beret */}
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 group">
                 <img
-                  src="/images/soldier_portrait_cinematic.jpg"
+                  src="/images/bsf_camo_outdoor.jpg"
                   alt="Chakrapani Nagiri BSF Uniform"
-                  className="w-full h-full object-cover object-top filter brightness-95 contrast-110 group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-center filter brightness-95 contrast-110 group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
                 
