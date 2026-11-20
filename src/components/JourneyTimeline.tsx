@@ -118,7 +118,7 @@ export const JourneyTimeline: React.FC = () => {
                       <img
                         src={milestone.image}
                         alt={milestone.title[language]}
-                        className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 

@@ -51,7 +51,7 @@ export const About: React.FC = () => {
                   <img
                     src="/images/bsf_stage_uniform.jpg"
                     alt="Chakrapani Nagiri Singing in BSF Uniform"
-                    className="w-full h-full object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-black/30 to-transparent" />
                   

@@ -41,6 +41,7 @@ export interface GalleryPhoto {
   src: string;
   span?: string;
   caption: { te: string; en: string };
+  objectPosition?: string;
 }
 
 export const journeyMilestones: JourneyMilestone[] = [
@@ -362,6 +363,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "soldier",
     src: "/images/bsf_camo_outdoor.jpg",
     span: "col-span-1 row-span-2",
+    objectPosition: "object-top",
     caption: {
       te: "బోర్డర్ సెక్యూరిటీ ఫోర్స్ (BSF) కామో యూనిఫాంలో గర్వంగా నిలిచిన చక్రపాణి నాగిరి.",
       en: "BSF Jawan Chakrapani Nagiri standing tall and proud in full military camouflage uniform.",
@@ -373,6 +375,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "soldier",
     src: "/images/bsf_stage_uniform.jpg",
     span: "col-span-1 row-span-2",
+    objectPosition: "object-top",
     caption: {
       te: "సైనిక యూనిఫాంలో స్వర్ణ మైక్ పట్టి వేదికపై భక్తిభావంతో గానం చేస్తున్న అపురూప దృశ్యం.",
       en: "Singing passionately on stage with the golden microphone while proudly donning the BSF uniform.",

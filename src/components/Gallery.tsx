@@ -102,7 +102,7 @@ export const Gallery: React.FC = () => {
                 <img
                   src={photo.src}
                   alt={photo.title[language]}
-                  className="w-full h-full object-cover filter contrast-105 group-hover:scale-108 transition-transform duration-700"
+                  className={`w-full h-full object-cover ${photo.objectPosition || 'object-top'} filter contrast-105 group-hover:scale-108 transition-transform duration-700`}
                 />
 
                 {/* Gradient overlay */}
