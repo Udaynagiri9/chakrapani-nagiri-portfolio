@@ -333,11 +333,11 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
       case 0:
         if (onOpenVideoModal) {
           onOpenVideoModal(
-            '/videos/hero_performance.mp4',
             undefined,
+            'lw9Mm7RqMu0',
             isTelugu
-              ? 'తెలుగు ఇండియన్ ఐడల్ సీజన్ 2 - చక్రపాణి నాగిరి గాన ప్రస్థానం'
-              : 'Telugu Indian Idol Season 2 - Chakrapani Nagiri Milestone'
+              ? 'శ్రీదేవి డ్రామా కంపెనీ ప్రత్యక్ష గానం - ఈటీవీ లైవ్'
+              : 'Sridevi Drama Company Live Performance - ETV Live'
           );
         } else {
           document.getElementById('performances')?.scrollIntoView({ behavior: 'smooth' });

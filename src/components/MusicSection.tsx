@@ -217,11 +217,11 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
                       </button>
 
                       {/* Video Watch Modal Trigger */}
-                      {song.videoUrl && (
+                      {(song.videoUrl || song.youtubeId) && (
                         <button
                           onClick={() => {
                             if (onOpenVideoModal) {
-                              onOpenVideoModal(song.videoUrl, undefined, song.title[language]);
+                              onOpenVideoModal(undefined, song.youtubeId, song.title[language]);
                             }
                           }}
                           className="text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"

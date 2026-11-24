@@ -167,9 +167,10 @@ export const songsData: SongItem[] = [
     },
     category: "folk",
     duration: "4:23",
-    youtubeUrl: "https://youtube.com/@chakrapaninagiri3874",
+    youtubeId: "X6vSW0pewco",
+    youtubeUrl: "https://youtu.be/X6vSW0pewco?si=ySSN-IHig2DpaBP0",
     audioUrl: "/audio/nuvvu_nenu_iddaram.mp3",
-    videoUrl: "/videos/nuvvu_nenu_iddaram.mp4",
+    videoUrl: "https://youtu.be/X6vSW0pewco?si=ySSN-IHig2DpaBP0",
     thumbnail: "/images/thumb_nuvvu_nenu.jpg",
     composer: {
       te: "గానం: చక్రపాణి నాగిరి & అనిత నాగరాజు",
@@ -188,9 +189,10 @@ export const songsData: SongItem[] = [
     },
     category: "melody",
     duration: "1:04",
-    youtubeUrl: "https://youtube.com/@chakrapaninagiri3874",
+    youtubeId: "x-lm3eTXHB4",
+    youtubeUrl: "https://youtube.com/shorts/x-lm3eTXHB4?si=SJLbN1cp2xc4S2Fw",
     audioUrl: "/audio/jaamu_raatiri.mp3",
-    videoUrl: "/videos/jaamu_raatiri.mp4",
+    videoUrl: "https://youtube.com/shorts/x-lm3eTXHB4?si=SJLbN1cp2xc4S2Fw",
     thumbnail: "/images/thumb_jaamu_raatiri.jpg",
     composer: {
       te: "గానం: చక్రపాణి నాగిరి (ఎస్పీబీ స్మృతి)",
@@ -209,9 +211,10 @@ export const songsData: SongItem[] = [
     },
     category: "melody",
     duration: "5:06",
-    youtubeUrl: "https://youtube.com/@chakrapaninagiri3874",
+    youtubeId: "SdnRHoFCW9g",
+    youtubeUrl: "https://youtu.be/SdnRHoFCW9g?si=RKiFm2ZFnCrbfunT",
     audioUrl: "/audio/telusa_manasa.mp3",
-    videoUrl: "/videos/telusa_manasa.mp4",
+    videoUrl: "https://youtu.be/SdnRHoFCW9g?si=RKiFm2ZFnCrbfunT",
     thumbnail: "/images/thumb_telusa_manasa.jpg",
     composer: {
       te: "గానం: చక్రపాణి నాగిరి",
@@ -225,7 +228,7 @@ export const songsData: SongItem[] = [
 ];
 
 /* ==========================================================================
-   Performances Data - "Official Video Releases" (All from user's "video songs")
+   Performances Data - "Official Video Releases" (Connected via YouTube)
    ========================================================================== */
 export const performancesData: PerformanceItem[] = [
   {
@@ -243,7 +246,8 @@ export const performancesData: PerformanceItem[] = [
       en: "Official Video Release",
     },
     thumbnail: "/images/thumb_nuvvu_nenu.jpg",
-    localVideo: "/videos/nuvvu_nenu_iddaram.mp4",
+    youtubeId: "X6vSW0pewco",
+    videoUrl: "https://youtu.be/X6vSW0pewco?si=ySSN-IHig2DpaBP0",
     description: {
       te: "చక్రపాణి నాగిరి మరియు అనిత నాగరాజు గానంలో విడుదలైన అధికారిక సీమంతం గీతం వీడియో దృశ్యాలు.",
       en: "Full official music video for Seemantham Song 2026 featuring Chakrapani Nagiri & Anitha Nagaraju.",
@@ -264,7 +268,8 @@ export const performancesData: PerformanceItem[] = [
       en: "Melody Video Single",
     },
     thumbnail: "/images/thumb_jaamu_raatiri.jpg",
-    localVideo: "/videos/jaamu_raatiri.mp4",
+    youtubeId: "x-lm3eTXHB4",
+    videoUrl: "https://youtube.com/shorts/x-lm3eTXHB4?si=SJLbN1cp2xc4S2Fw",
     description: {
       te: "ఎవర్ గ్రీన్ క్లాసిక్ జాము రాతిరి గీతాన్ని చక్రపాణి నాగిరి పాడిన ప్రత్యేక హై-డెఫినిషన్ వీడియో దృశ్యాలు.",
       en: "Chakrapani's enchanting rendition of Jaamu Raatiri captured in high-definition video.",
@@ -285,7 +290,8 @@ export const performancesData: PerformanceItem[] = [
       en: "Official Cover Video",
     },
     thumbnail: "/images/thumb_telusa_manasa.jpg",
-    localVideo: "/videos/telusa_manasa.mp4",
+    youtubeId: "SdnRHoFCW9g",
+    videoUrl: "https://youtu.be/SdnRHoFCW9g?si=RKiFm2ZFnCrbfunT",
     description: {
       te: "కాలాతీత ప్రేమగీతం 'తెలుసా మనసా'ను చక్రపాణి నాగిరి పూర్తి నిడివితో పాడిన అధికారిక కవర్ వీడియో.",
       en: "Soul-stirring full cover music video of the classic Telugu melody Telusa Manasa.",
@@ -306,52 +312,11 @@ export const performancesData: PerformanceItem[] = [
       en: "Television Live Stage",
     },
     thumbnail: "/images/thumb_sridevi_drama_company.jpg",
-    localVideo: "/videos/sridevi_drama_company.mp4",
+    youtubeId: "lw9Mm7RqMu0",
+    videoUrl: "https://youtu.be/lw9Mm7RqMu0?si=jqaV_FFkzkn4HBYH",
     description: {
       te: "ఈటీవీ శ్రీదేవి డ్రామా కంపెనీ వేదికపై రష్మి గౌతమ్ మరియు ప్రేక్షకుల హర్షధ్వానాల నడుమ చక్రపాణి నాగిరి గానం చేసిన చిరస్మరణీయ ప్రదర్శన.",
       en: "Electrifying live singing appearance by Chakrapani Nagiri on ETV's flagship Sridevi Drama Company before television audiences.",
-    },
-  },
-  {
-    id: "video-nbk-presents-top12",
-    title: {
-      te: "నందమూరి బాలకృష్ణ సమక్షంలో టాప్ 12 వేడుక",
-      en: "NBK Presents Top 12 Special Episode",
-    },
-    subtitle: {
-      te: "నటసింహం బాలకృష్ణ & థమన్ సమక్షంలో వేడుక",
-      en: "Special Episode with Balakrishna & Thaman",
-    },
-    event: {
-      te: "ఇండియన్ ఐడల్ స్పెషల్",
-      en: "Indian Idol TV Special",
-    },
-    thumbnail: "/images/thumb_nbk_special_top12.jpg",
-    localVideo: "/videos/special_video_release.mp4",
-    description: {
-      te: "తెలుగు ఇండియన్ ఐడల్ వేదికపై నందమూరి బాలకృష్ణ మరియు న్యాయనిర్ణేతల సమక్షంలో టాప్ 12 ఘనత సాధించిన విశేష వేదిక వీడియో.",
-      en: "Official video from Telugu Indian Idol Season 2 celebrating the Top 12 contestants before superstar Nandamuri Balakrishna and composer SS Thaman.",
-    },
-  },
-  {
-    id: "video-bsf-salute",
-    title: {
-      te: "సైనిక వందనం & వేదిక ప్రవేశం (BSF Uniform Special)",
-      en: "BSF Uniform Salute & Historic Audition",
-    },
-    subtitle: {
-      te: "తెలుగు ఇండియన్ ఐడల్ సీజన్ 2 - ఆహా (aha)",
-      en: "Telugu Indian Idol Season 2 - aha OTT",
-    },
-    event: {
-      te: "స్టాండింగ్ ఒవేషన్ మూమెంట్",
-      en: "Judges Standing Ovation",
-    },
-    thumbnail: "/images/bsf_salute.jpg",
-    localVideo: "/videos/hero_performance.mp4",
-    description: {
-      te: "సైనిక దుస్తుల్లో వేదికపైకి వచ్చి చేసిన దేశ రక్షణ వందనం, ఎస్.ఎస్. థమన్ మరియు న్యాయనిర్ణేతలను భావోద్వేగానికి గురిచేసిన అద్భుత క్షణం.",
-      en: "Entering the stage in full BSF uniform, Chakrapani's salute and heartfelt singing touched judges Thaman, Karthik and Geetha Madhuri.",
     },
   },
 ];

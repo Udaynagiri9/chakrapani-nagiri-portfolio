@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { performancesData, PerformanceItem } from '../data/mediaData';
-import { Play, Tv, Film } from 'lucide-react';
+import { Play, Tv, Film, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface PerformancesProps {
@@ -35,8 +35,8 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
           </p>
         </div>
 
-        {/* Video Grid: 3 columns on large screens for 6 videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Video Grid: 2 columns on desktop for balanced 4-video showcase */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {performancesData.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -48,7 +48,7 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
             >
               {/* Video Thumbnail with Hover Play Button */}
               <div
-                onClick={() => onOpenVideoModal(item.localVideo, item.youtubeId, item.title[language])}
+                onClick={() => onOpenVideoModal(undefined, item.youtubeId, item.title[language])}
                 className="relative aspect-[16/9] overflow-hidden bg-black cursor-pointer"
               >
                 <img
@@ -93,16 +93,24 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between font-helvetica">
                   <button
-                    onClick={() => onOpenVideoModal(item.localVideo, item.youtubeId, item.title[language])}
+                    onClick={() => onOpenVideoModal(undefined, item.youtubeId, item.title[language])}
                     className="text-sm font-bold text-accent-highlight hover:text-white flex items-center gap-2 transition-colors cursor-pointer"
                   >
                     <Play className="w-4 h-4 fill-current" />
                     <span>{t.watchModal}</span>
                   </button>
 
-                  <span className="text-xs text-text-muted">
-                    {isTelugu ? 'అధికారిక ఫుటేజ్' : 'Verified Video'}
-                  </span>
+                  {item.videoUrl && (
+                    <a
+                      href={item.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-text-secondary hover:text-accent-highlight flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                    >
+                      <span>YouTube</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

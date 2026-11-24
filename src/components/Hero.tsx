@@ -5,7 +5,7 @@ import { Shield, Mic2, Play, Sparkles, Volume2, VolumeX, Award, Star } from 'luc
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeroProps {
-  onOpenVideoModal?: (videoSrc?: string) => void;
+  onOpenVideoModal?: (videoSrc?: string, youtubeId?: string, title?: string) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
@@ -198,7 +198,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
               >
                 {/* Video Modal Trigger */}
                 <button
-                  onClick={() => onOpenVideoModal && onOpenVideoModal('/videos/hero_performance.mp4')}
+                  onClick={() =>
+                    onOpenVideoModal &&
+                    onOpenVideoModal(
+                      undefined,
+                      'lw9Mm7RqMu0',
+                      isTelugu
+                        ? 'శ్రీదేవి డ్రామా కంపెనీ ప్రత్యక్ష గానం (ఈటీవీ లైవ్)'
+                        : 'Sridevi Drama Company Live Performance (ETV Telugu)'
+                    )
+                  }
                   className="flex-1 sm:flex-initial px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm text-text-secondary hover:text-white bg-black/60 hover:bg-black/80 border border-white/15 transition-all flex items-center justify-center gap-2 font-helvetica cursor-pointer"
                 >
                   <div className="w-5 h-5 rounded-full bg-accent-red/20 flex items-center justify-center text-accent-highlight">
