@@ -17,7 +17,6 @@ export const Gallery: React.FC = () => {
     { id: 'stage', label: t.filters.stage },
     { id: 'soldier', label: t.filters.soldier },
     { id: 'idol', label: t.filters.idol },
-    { id: 'personal', label: t.filters.personal },
   ];
 
   const filteredPhotos = activeFilter === 'all'

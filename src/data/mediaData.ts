@@ -380,28 +380,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     },
   },
   {
-    id: "gal-4",
-    title: { te: "నటసింహం బాలకృష్ణ ఆశీస్సులు", en: "Blessings from Nandamuri Balakrishna" },
-    category: "idol",
-    src: "/images/balakrishna_special.jpg",
-    span: "col-span-1 row-span-1",
-    caption: {
-      te: "నందమూరి బాలకృష్ణ గారి నుండి ప్రశంసలు మరియు సత్కారం అందుకుంటున్న క్షణం.",
-      en: "Special moment on stage with superstar Nandamuri Balakrishna.",
-    },
-  },
-  {
-    id: "gal-5",
-    title: { te: "ఎస్.ఎస్. థమన్ చప్పట్లు", en: "Composer Thaman Applauds" },
-    category: "idol",
-    src: "/images/thaman_applause.jpg",
-    span: "col-span-1 row-span-1",
-    caption: {
-      te: "సంగీత దర్శకుడు థమన్ నిలబడి చప్పట్లు కొడుతూ అభినందించిన దృశ్యం.",
-      en: "Music Director SS Thaman standing up to applaud the BSF jawan's pure singing.",
-    },
-  },
-  {
     id: "gal-6",
     title: { te: "సంగీత రసజ్ఞుల సమ్మేళనం", en: "Musical Celebration" },
     category: "stage",
