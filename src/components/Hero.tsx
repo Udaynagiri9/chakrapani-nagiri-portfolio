@@ -6,17 +6,54 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeroProps {
   onOpenVideoModal?: (videoSrc?: string, youtubeId?: string, title?: string) => void;
+  onStopAudio?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => {
   const { language, isTelugu } = useLanguage();
   const t = translations[language].hero;
   const [useVideoBackground, setUseVideoBackground] = useState(false);
-  const [videoMuted, setVideoMuted] = useState(true);
+  const [videoMuted, setVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleVideoBg = () => {
-    setUseVideoBackground(!useVideoBackground);
+    if (!useVideoBackground) {
+      // Turn on Live Video with sound
+      setUseVideoBackground(true);
+      setVideoMuted(false);
+      if (onStopAudio) onStopAudio();
+
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.muted = false;
+          videoRef.current.volume = 1.0;
+          videoRef.current.play().catch((err) => {
+            console.log('Video play with sound blocked by browser, falling back to muted:', err);
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+              videoRef.current.play();
+              setVideoMuted(true);
+            }
+          });
+        }
+      }, 50);
+    } else {
+      // Turn off Live Video
+      setUseVideoBackground(false);
+      setVideoMuted(true);
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const nextMuted = !videoMuted;
+    setVideoMuted(nextMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = nextMuted;
+    }
   };
 
   const scrollTo = (id: string) => {
@@ -198,16 +235,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
               >
                 {/* Video Modal Trigger */}
                 <button
-                  onClick={() =>
-                    onOpenVideoModal &&
-                    onOpenVideoModal(
-                      undefined,
-                      'lw9Mm7RqMu0',
-                      isTelugu
-                        ? 'శ్రీదేవి డ్రామా కంపెనీ ప్రత్యక్ష గానం (ఈటీవీ లైవ్)'
-                        : 'Sridevi Drama Company Live Performance (ETV Telugu)'
-                    )
-                  }
+                  onClick={() => {
+                    if (videoRef.current) videoRef.current.muted = true;
+                    setVideoMuted(true);
+                    if (onOpenVideoModal) {
+                      onOpenVideoModal(
+                        undefined,
+                        'lw9Mm7RqMu0',
+                        isTelugu
+                          ? 'శ్రీదేవి డ్రామా కంపెనీ ప్రత్యక్ష గానం (ఈటీవీ లైవ్)'
+                          : 'Sridevi Drama Company Live Performance (ETV Telugu)'
+                      );
+                    }
+                  }}
                   className="flex-1 sm:flex-initial px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm text-text-secondary hover:text-white bg-black/60 hover:bg-black/80 border border-white/15 transition-all flex items-center justify-center gap-2 font-helvetica cursor-pointer"
                 >
                   <div className="w-5 h-5 rounded-full bg-accent-red/20 flex items-center justify-center text-accent-highlight">
@@ -235,7 +275,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal }) => {
 
                 {useVideoBackground && (
                   <button
-                    onClick={() => setVideoMuted(!videoMuted)}
+                    onClick={toggleMute}
                     className="p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-neutral-300 transition-colors cursor-pointer"
                     aria-label="Toggle video sound"
                     title={videoMuted ? 'Unmute' : 'Mute'}

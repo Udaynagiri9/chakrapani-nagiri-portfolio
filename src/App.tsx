@@ -75,6 +75,12 @@ const MainContent: React.FC = () => {
     // STOP any audio that is running in the background immediately so old task stops and new one begins
     stopAllAudio();
 
+    // Also mute background hero video if playing with sound
+    try {
+      const heroVideo = document.querySelector('video');
+      if (heroVideo) heroVideo.muted = true;
+    } catch {}
+
     setModalVideoSrc(videoSrc);
     setModalYoutubeId(youtubeId);
     setModalTitle(title || (isTelugu ? 'ప్రత్యక్ష వేదిక దృశ్యాలు' : 'Live Stage Footage'));
@@ -121,7 +127,7 @@ const MainContent: React.FC = () => {
       {currentPage === 'home' ? (
         <main>
           {/* 1. Cinematic Hero Section */}
-          <Hero onOpenVideoModal={handleOpenVideoModal} />
+          <Hero onOpenVideoModal={handleOpenVideoModal} onStopAudio={stopAllAudio} />
 
           {/* 2. Emotional Split-Screen About Section */}
           <About />
