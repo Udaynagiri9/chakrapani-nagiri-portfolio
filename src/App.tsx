@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -14,6 +14,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
 import { MediaPressPage } from './components/MediaPressPage';
+import { SongItem } from './data/mediaData';
 
 const MainContent: React.FC = () => {
   const { isTelugu } = useLanguage();
@@ -27,14 +28,68 @@ const MainContent: React.FC = () => {
   const [modalYoutubeId, setModalYoutubeId] = useState<string | undefined>(undefined);
   const [modalTitle, setModalTitle] = useState<string | undefined>(undefined);
 
+  // Audio Playback State for Music Section
+  const [playingSongId, setPlayingSongId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const stopAllAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setPlayingSongId(null);
+
+    // Extra safeguard: pause and reset any audio elements in the DOM
+    try {
+      document.querySelectorAll('audio').forEach((el) => {
+        el.pause();
+        el.currentTime = 0;
+      });
+    } catch {}
+  };
+
+  const handleTogglePlayAudio = (song: SongItem) => {
+    if (!song.audioUrl) return;
+
+    if (playingSongId === song.id) {
+      // Pause current playing audio
+      audioRef.current?.pause();
+      setPlayingSongId(null);
+    } else {
+      // Starting a new song: Close any open video modal so sound never collides
+      setVideoModalOpen(false);
+
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      const audio = new Audio(song.audioUrl);
+      audioRef.current = audio;
+      setPlayingSongId(song.id);
+      audio.play().catch((err) => console.log('Audio play failed:', err));
+      audio.onended = () => setPlayingSongId(null);
+      audio.onerror = () => setPlayingSongId(null);
+    }
+  };
+
   const handleOpenVideoModal = (videoSrc?: string, youtubeId?: string, title?: string) => {
+    // STOP any audio that is running in the background immediately so old task stops and new one begins
+    stopAllAudio();
+
     setModalVideoSrc(videoSrc);
     setModalYoutubeId(youtubeId);
     setModalTitle(title || (isTelugu ? 'ప్రత్యక్ష వేదిక దృశ్యాలు' : 'Live Stage Footage'));
     setVideoModalOpen(true);
   };
 
+  const handleCloseVideoModal = () => {
+    setVideoModalOpen(false);
+    setModalVideoSrc(undefined);
+    setModalYoutubeId(undefined);
+  };
+
   const handleNavigate = (page: 'home' | 'media', sectionId?: string) => {
+    stopAllAudio();
+    setVideoModalOpen(false);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -47,6 +102,12 @@ const MainContent: React.FC = () => {
       }, 150);
     }
   };
+
+  useEffect(() => {
+    return () => {
+      stopAllAudio();
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-bg-primary text-text-primary selection:bg-accent-red selection:text-white">
@@ -72,7 +133,12 @@ const MainContent: React.FC = () => {
           <JourneyTimeline />
 
           {/* 5. Music and Songs Portfolio */}
-          <MusicSection onOpenVideoModal={handleOpenVideoModal} />
+          <MusicSection
+            onOpenVideoModal={handleOpenVideoModal}
+            playingSongId={playingSongId}
+            onTogglePlayAudio={handleTogglePlayAudio}
+            onStopAudio={stopAllAudio}
+          />
 
           {/* 6. Live Performances & Stage Moments */}
           <Performances onOpenVideoModal={handleOpenVideoModal} />
@@ -108,7 +174,7 @@ const MainContent: React.FC = () => {
       {/* Reusable Video Lightbox Modal */}
       <VideoModal
         isOpen={videoModalOpen}
-        onClose={() => setVideoModalOpen(false)}
+        onClose={handleCloseVideoModal}
         videoSrc={modalVideoSrc}
         youtubeId={modalYoutubeId}
         title={modalTitle}

@@ -24,6 +24,14 @@ export const VideoModal: React.FC<VideoModalProps> = ({
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
+
+      // Extra safeguard: stop any background audio immediately
+      try {
+        document.querySelectorAll('audio').forEach((el) => {
+          el.pause();
+          el.currentTime = 0;
+        });
+      } catch {}
     }
     return () => {
       window.removeEventListener('keydown', handleKeyDown);

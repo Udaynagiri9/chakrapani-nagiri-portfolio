@@ -7,15 +7,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface MusicSectionProps {
   onOpenVideoModal?: (videoSrc?: string, youtubeId?: string, title?: string) => void;
+  playingSongId?: string | null;
+  onTogglePlayAudio?: (song: SongItem) => void;
+  onStopAudio?: () => void;
 }
 
-export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) => {
+export const MusicSection: React.FC<MusicSectionProps> = ({
+  onOpenVideoModal,
+  playingSongId: controlledPlayingSongId,
+  onTogglePlayAudio: controlledTogglePlayAudio,
+  onStopAudio,
+}) => {
   const { language, isTelugu } = useLanguage();
   const t = translations[language].music;
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [playingSongId, setPlayingSongId] = useState<string | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [internalPlayingSongId, setInternalPlayingSongId] = useState<string | null>(null);
+  const internalAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  const isControlled = controlledPlayingSongId !== undefined;
+  const currentPlayingId = isControlled ? controlledPlayingSongId : internalPlayingSongId;
 
   const categories = [
     { id: 'all', label: t.categories.all },
@@ -28,30 +39,52 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
     : songsData.filter((song) => song.category === activeCategory);
 
   const togglePlayAudio = (song: SongItem) => {
+    if (isControlled && controlledTogglePlayAudio) {
+      controlledTogglePlayAudio(song);
+      return;
+    }
+
     if (!song.audioUrl) return;
 
-    if (playingSongId === song.id) {
+    if (internalPlayingSongId === song.id) {
       // Pause
-      audioRef.current?.pause();
-      setPlayingSongId(null);
+      internalAudioRef.current?.pause();
+      setInternalPlayingSongId(null);
     } else {
       // Play new
-      if (audioRef.current) {
-        audioRef.current.pause();
+      if (internalAudioRef.current) {
+        internalAudioRef.current.pause();
       }
       const audio = new Audio(song.audioUrl);
-      audioRef.current = audio;
-      setPlayingSongId(song.id);
+      internalAudioRef.current = audio;
+      setInternalPlayingSongId(song.id);
       audio.play().catch((err) => console.log('Audio play failed:', err));
-      audio.onended = () => setPlayingSongId(null);
-      audio.onerror = () => setPlayingSongId(null);
+      audio.onended = () => setInternalPlayingSongId(null);
+      audio.onerror = () => setInternalPlayingSongId(null);
+    }
+  };
+
+  const handleWatchVideo = (song: SongItem) => {
+    // 1. Stop any currently playing audio immediately so audio & video never collide
+    if (onStopAudio) {
+      onStopAudio();
+    }
+    if (internalAudioRef.current) {
+      internalAudioRef.current.pause();
+      internalAudioRef.current.currentTime = 0;
+      setInternalPlayingSongId(null);
+    }
+
+    // 2. Open the video modal
+    if (onOpenVideoModal) {
+      onOpenVideoModal(undefined, song.youtubeId, song.title[language]);
     }
   };
 
   useEffect(() => {
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
+      if (internalAudioRef.current) {
+        internalAudioRef.current.pause();
       }
     };
   }, []);
@@ -114,7 +147,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredSongs.map((song) => {
-              const isPlaying = playingSongId === song.id;
+              const isPlaying = currentPlayingId === song.id;
 
               return (
                 <motion.div
@@ -219,11 +252,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({ onOpenVideoModal }) 
                       {/* Video Watch Modal Trigger */}
                       {(song.videoUrl || song.youtubeId) && (
                         <button
-                          onClick={() => {
-                            if (onOpenVideoModal) {
-                              onOpenVideoModal(undefined, song.youtubeId, song.title[language]);
-                            }
-                          }}
+                          onClick={() => handleWatchVideo(song)}
                           className="text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                         >
                           <Film className="w-4 h-4 text-accent-highlight" />
