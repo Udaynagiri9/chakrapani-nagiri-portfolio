@@ -91,15 +91,11 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
 
   return (
     <section id="music" className="relative py-24 bg-bg-primary overflow-hidden border-t border-white/5">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-accent-red/10 rounded-full blur-[170px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-accent-darkRed/15 rounded-full blur-[150px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-xs font-semibold tracking-wider uppercase font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Radio className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -110,13 +106,13 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
             {t.subtitle}
           </p>
 
-          {/* YouTube Channel Direct Link Pill (NO GLOW) */}
+          {/* YouTube Channel Direct Link Pill */}
           <div className="pt-2">
             <a
               href="https://youtube.com/@chakrapaninagiri3874"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-xs font-semibold text-red-300 transition-colors font-helvetica"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-neutral-300 transition-colors font-helvetica"
             >
               <span>@chakrapaninagiri3874</span>
               <span className="text-white/40">•</span>
@@ -126,7 +122,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
           </div>
         </div>
 
-        {/* Category Tabs (NO GLOWING SHADOWS) */}
+        {/* Category Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12 font-helvetica">
           {categories.map((cat) => (
             <button
@@ -134,8 +130,8 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
               onClick={() => setActiveCategory(cat.id)}
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-200 cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-accent-red text-white border border-accent-highlight font-bold'
-                  : 'bg-white/5 text-text-secondary hover:text-white hover:bg-white/10 border border-white/10'
+                  ? 'bg-white text-black border border-white font-bold'
+                  : 'bg-white/5 text-neutral-400 hover:text-white hover:bg-white/10 border border-white/10'
               }`}
             >
               {cat.label}
@@ -157,8 +153,8 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
-                  className={`rounded-3xl overflow-hidden bg-bg-card border transition-all duration-300 shadow-xl group flex flex-col justify-between ${
-                    isPlaying ? 'border-accent-highlight ring-1 ring-accent-highlight/50' : 'border-white/10 hover:border-white/25'
+                  className={`rounded-3xl overflow-hidden bg-[#141414] border transition-all duration-300 shadow-xl group flex flex-col justify-between ${
+                    isPlaying ? 'border-white/50 ring-1 ring-white/30' : 'border-white/10 hover:border-white/25'
                   }`}
                 >
                   {/* Song Thumbnail & Audio Play Overlay */}
@@ -171,7 +167,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
                     <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-black/40 to-transparent" />
 
                     {/* Category Badge Top Left */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-accent-highlight font-helvetica">
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-medium uppercase tracking-wider text-neutral-300 font-helvetica">
                       {song.category}
                     </div>
 
@@ -182,22 +178,22 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
 
                     {/* Playing Equalizer Indicator */}
                     {isPlaying && (
-                      <div className="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-highlight/50 flex items-center gap-1.5">
-                        <Volume2 className="w-3.5 h-3.5 text-accent-highlight animate-pulse" />
-                        <span className="text-[10px] font-bold text-accent-highlight uppercase tracking-wider font-helvetica">
+                      <div className="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 flex items-center gap-1.5">
+                        <Volume2 className="w-3.5 h-3.5 text-white animate-pulse" />
+                        <span className="text-[10px] font-medium text-white uppercase tracking-wider font-helvetica">
                           {isTelugu ? 'ప్లే అవుతోంది' : 'Playing Audio'}
                         </span>
                       </div>
                     )}
 
-                    {/* Central Play/Pause Audio Button (Clean, NO GLOW) */}
+                    {/* Central Play/Pause Audio Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <button
                         onClick={() => togglePlayAudio(song)}
                         className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-200 transform group-hover:scale-105 cursor-pointer border border-white/20 ${
                           isPlaying
                             ? 'bg-white text-black'
-                            : 'bg-accent-red hover:bg-accent-highlight text-white'
+                            : 'bg-white/90 hover:bg-white text-black'
                         }`}
                         title={isPlaying ? 'Pause' : 'Play Audio'}
                         aria-label={isPlaying ? 'Pause song' : 'Play audio song'}
@@ -214,12 +210,12 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
                   {/* Song Details Body */}
                   <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-accent-highlight transition-colors line-clamp-1 font-helvetica">
+                      <h3 className="text-lg font-bold text-white group-hover:text-neutral-200 transition-colors line-clamp-1 font-helvetica">
                         {song.title[language]}
                       </h3>
 
                       {song.composer && (
-                        <p className="text-xs sm:text-sm text-accent-highlight font-semibold mt-1 font-helvetica">
+                        <p className="text-xs sm:text-sm text-neutral-400 font-medium mt-1 font-helvetica">
                           {song.composer[language]}
                         </p>
                       )}
@@ -234,16 +230,16 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
                       {/* Audio Play/Pause Button */}
                       <button
                         onClick={() => togglePlayAudio(song)}
-                        className="text-xs sm:text-sm font-semibold text-white hover:text-accent-highlight flex items-center gap-1.5 transition-colors cursor-pointer"
+                        className="text-xs sm:text-sm font-semibold text-neutral-200 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                       >
                         {isPlaying ? (
                           <>
-                            <Pause className="w-4 h-4 fill-current text-accent-highlight" />
+                            <Pause className="w-4 h-4 fill-current text-white" />
                             <span>{t.pauseTrack}</span>
                           </>
                         ) : (
                           <>
-                            <Play className="w-4 h-4 fill-current text-accent-highlight" />
+                            <Play className="w-4 h-4 fill-current text-white" />
                             <span>{t.playTrack}</span>
                           </>
                         )}
@@ -255,7 +251,7 @@ export const MusicSection: React.FC<MusicSectionProps> = ({
                           onClick={() => handleWatchVideo(song)}
                           className="text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                         >
-                          <Film className="w-4 h-4 text-accent-highlight" />
+                          <Film className="w-4 h-4 text-neutral-400" />
                           <span>{isTelugu ? 'వీడియో చూడండి' : 'Watch Video'}</span>
                         </button>
                       )}

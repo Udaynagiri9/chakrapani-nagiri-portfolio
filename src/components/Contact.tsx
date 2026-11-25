@@ -52,15 +52,11 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="relative py-24 bg-bg-secondary overflow-hidden border-t border-white/5">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-accent-red/10 rounded-full blur-[170px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-accent-darkRed/15 rounded-full blur-[150px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-xs font-semibold tracking-wider uppercase font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Mail className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -86,7 +82,7 @@ export const Contact: React.FC = () => {
             {/* Main Info Card */}
             <div className="p-8 rounded-3xl bg-bg-card border border-white/10 shadow-2xl space-y-6 relative overflow-hidden">
               <div className="space-y-1">
-                <span className="text-xs font-bold uppercase tracking-widest text-accent-highlight font-helvetica">
+                <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 font-helvetica">
                   {isTelugu ? 'ప్రత్యక్ష సంప్రదింపులు' : 'Direct Enquiries'}
                 </span>
                 <h3
@@ -102,13 +98,13 @@ export const Contact: React.FC = () => {
 
               {/* Verified Email Card */}
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2">
-                <div className="flex items-center gap-2 text-sm font-bold text-accent-highlight uppercase tracking-wider font-helvetica">
-                  <Mail className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-sm font-semibold text-neutral-300 uppercase tracking-wider font-helvetica">
+                  <Mail className="w-4 h-4 text-neutral-400" />
                   <span>{t.officialEmail}</span>
                 </div>
                 <a
                   href="mailto:chakrapaninagiri@gmail.com"
-                  className="text-base sm:text-lg font-bold text-white hover:text-accent-highlight transition-colors block break-all font-helvetica"
+                  className="text-base sm:text-lg font-bold text-white hover:text-neutral-200 transition-colors block break-all font-helvetica"
                 >
                   chakrapaninagiri@gmail.com
                 </a>
@@ -121,15 +117,15 @@ export const Contact: React.FC = () => {
 
               {/* Verified Hometown Details */}
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2 font-helvetica">
-                <div className="flex items-center gap-2 text-sm font-bold text-neutral-300 uppercase tracking-wider">
-                  <MapPin className="w-4 h-4 text-accent-highlight" />
+                <div className="flex items-center gap-2 text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                  <MapPin className="w-4 h-4 text-neutral-400" />
                   <span>{t.hometown}</span>
                 </div>
                 <p className="text-sm font-medium text-white/95 leading-relaxed">
                   {t.hometownFull}
                 </p>
                 <div className="flex items-center gap-2 pt-1 text-xs sm:text-sm text-neutral-400">
-                  <Shield className="w-4 h-4 text-accent-highlight" />
+                  <Shield className="w-4 h-4 text-neutral-400" />
                   <span>{isTelugu ? 'ఆంధ్రప్రదేశ్ - శ్రీకాకుళం జిల్లా' : 'Srikakulam District, Andhra Pradesh'}</span>
                 </div>
               </div>
@@ -142,7 +138,7 @@ export const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all"
                 >
-                  <Instagram className="w-4 h-4 text-pink-400" />
+                  <Instagram className="w-4 h-4 text-white" />
                   <span>Instagram</span>
                 </a>
 
@@ -152,7 +148,7 @@ export const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all"
                 >
-                  <Youtube className="w-4 h-4 text-red-500" />
+                  <Youtube className="w-4 h-4 text-white" />
                   <span>YouTube</span>
                 </a>
               </div>
@@ -181,8 +177,8 @@ export const Contact: React.FC = () => {
               
               {isSubmitted ? (
                 <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-accent-red/20 border border-accent-highlight/40 text-accent-highlight flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8 text-accent-highlight" />
+                  <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-serifDisplay font-bold text-white">
                     {t.form.successTitle}
@@ -195,7 +191,7 @@ export const Contact: React.FC = () => {
                   <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
                     <a
                       href={`mailto:chakrapaninagiri@gmail.com?subject=${encodeURIComponent('[Portfolio Enquiry] ' + formState.purpose)}&body=${encodeURIComponent(formState.message)}`}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-accent-red hover:bg-accent-highlight text-white transition-colors shadow-md"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-black hover:bg-neutral-200 transition-colors shadow-md"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>chakrapaninagiri@gmail.com</span>
@@ -242,7 +238,7 @@ export const Contact: React.FC = () => {
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder={isTelugu ? 'మీ పూర్తి పేరు' : 'John Doe'}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-white/40 outline-none text-white text-sm transition-all"
                       />
                     </div>
 
@@ -257,7 +253,7 @@ export const Contact: React.FC = () => {
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="example@mail.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-white/40 outline-none text-white text-sm transition-all"
                       />
                     </div>
                   </div>
@@ -273,7 +269,7 @@ export const Contact: React.FC = () => {
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-white/40 outline-none text-white text-sm transition-all"
                       />
                     </div>
 
@@ -286,7 +282,7 @@ export const Contact: React.FC = () => {
                         <select
                           value={formState.purpose}
                           onChange={(e) => setFormState({ ...formState, purpose: e.target.value })}
-                          className="w-full px-4 py-2.5 pr-10 rounded-xl bg-neutral-900 border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all cursor-pointer appearance-none"
+                          className="w-full px-4 py-2.5 pr-10 rounded-xl bg-neutral-900 border border-white/10 focus:border-white/40 outline-none text-white text-sm transition-all cursor-pointer appearance-none"
                         >
                           {t.form.purposeOptions.map((opt, i) => (
                             <option key={i} value={opt} className="bg-neutral-900 text-white py-2">
@@ -294,7 +290,7 @@ export const Contact: React.FC = () => {
                             </option>
                           ))}
                         </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-accent-highlight">
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-neutral-400">
                           <ChevronDown className="w-4 h-4" />
                         </div>
                       </div>
@@ -316,15 +312,15 @@ export const Contact: React.FC = () => {
                           ? 'కార్యక్రమ తేదీ, వేదిక మరియు వివరాలను ఇక్కడ రాయండి...'
                           : 'Provide event details, date, location or your message here...'
                       }
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-accent-highlight outline-none text-white text-sm transition-all resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 focus:border-white/40 outline-none text-white text-sm transition-all resize-none"
                     />
                   </div>
 
-                  {/* Submit Button (Clean, Perfectly Aligned Arrow Icon) */}
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl font-bold text-sm text-white bg-accent-red hover:bg-accent-highlight border border-transparent transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 group font-helvetica shadow-lg"
+                    className="w-full py-4 rounded-xl font-bold text-sm text-black bg-white hover:bg-neutral-200 border border-white transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 group font-helvetica shadow-lg"
                   >
                     <span>{isSubmitting ? t.form.sending : t.form.send}</span>
                     <Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

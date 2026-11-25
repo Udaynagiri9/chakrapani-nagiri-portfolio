@@ -10,15 +10,11 @@ export const About: React.FC = () => {
 
   return (
     <section id="about" className="relative py-16 sm:py-24 bg-bg-secondary overflow-hidden border-t border-white/5">
-      {/* Ambient background glows */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent-red/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-darkRed/15 rounded-full blur-[140px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-xs font-semibold tracking-wider uppercase font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Compass className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -42,9 +38,6 @@ export const About: React.FC = () => {
             className="lg:col-span-5"
           >
             <div className="relative group">
-              {/* Red glow halo */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-accent-red/30 via-accent-highlight/20 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity" />
-
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-bg-card shadow-2xl">
                 {/* Photo: Dual Identity Fusion (Stage & BSF) */}
                 <div className="relative aspect-[4/5] overflow-hidden">
@@ -59,7 +52,7 @@ export const About: React.FC = () => {
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-black/85 backdrop-blur-md border border-white/10 shadow-xl space-y-2.5">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-accent-red/20 border border-accent-highlight/40 flex items-center justify-center text-accent-highlight">
+                        <div className="w-7 h-7 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white">
                           <Shield className="w-4 h-4" />
                         </div>
                         <div>
@@ -71,7 +64,7 @@ export const About: React.FC = () => {
                           </p>
                         </div>
                       </div>
-                      <span className="text-[11px] font-bold text-accent-highlight px-2 py-0.5 rounded bg-accent-red/20 border border-accent-red/30">
+                      <span className="text-[11px] font-semibold text-neutral-300 px-2 py-0.5 rounded bg-white/10 border border-white/15">
                         {isTelugu ? 'సేవ & సాధన' : 'Duty & Soul'}
                       </span>
                     </div>
@@ -81,7 +74,7 @@ export const About: React.FC = () => {
                 {/* Quick Info Grid below image */}
                 <div className="p-6 space-y-3.5 bg-gradient-to-b from-bg-card to-black/60">
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-accent-highlight shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-neutral-400 shrink-0 mt-1" />
                     <div>
                       <span className="text-xs font-semibold text-text-muted uppercase tracking-wider block">
                         {t.hometownLabel}
@@ -94,7 +87,7 @@ export const About: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/5">
                     <div className="flex items-start gap-2.5">
-                      <Shield className="w-4 h-4 text-accent-highlight shrink-0 mt-0.5" />
+                      <Shield className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
                       <div>
                         <span className="text-xs text-text-muted uppercase tracking-wider block font-semibold">
                           {t.serviceLabel}
@@ -106,7 +99,7 @@ export const About: React.FC = () => {
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Music className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                      <Music className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
                       <div>
                         <span className="text-xs text-text-muted uppercase tracking-wider block font-semibold">
                           {t.recognitionLabel}
@@ -131,11 +124,11 @@ export const About: React.FC = () => {
             className="lg:col-span-7 space-y-6"
           >
             {/* Core Lead Tagline */}
-            <div className="border-l-4 border-accent-highlight pl-5 py-1">
+            <div className="border-l-4 border-white/30 pl-5 py-1">
               <p className="text-xl sm:text-2xl font-serifDisplay font-semibold text-white/95 leading-relaxed">
                 "{t.lead}"
               </p>
-              <p className="text-xs text-accent-highlight uppercase tracking-widest mt-1 font-helvetica font-semibold">
+              <p className="text-xs text-neutral-400 uppercase tracking-widest mt-1 font-helvetica font-semibold">
                 {isTelugu ? 'చక్రపాణి నాగిరి జీవన వేదాంతం' : 'CHAKRAPANI NAGIRI • LIFE PHILOSOPHY'}
               </p>
             </div>
@@ -149,8 +142,8 @@ export const About: React.FC = () => {
 
             {/* 3 Core Values / Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-accent-red/20 flex items-center justify-center text-accent-highlight mb-2.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-2.5">
                   <Shield className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -161,8 +154,8 @@ export const About: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-red-950/50 flex items-center justify-center text-red-400 mb-2.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-2.5">
                   <Music className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -173,8 +166,8 @@ export const About: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent-highlight/40 transition-colors">
-                <div className="w-9 h-9 rounded-xl bg-amber-950/50 flex items-center justify-center text-amber-400 mb-2.5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors">
+                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-2.5">
                   <Heart className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -187,8 +180,8 @@ export const About: React.FC = () => {
             </div>
 
             {/* Quote Pill */}
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-accent-darkRed/20 via-black to-accent-red/10 border border-accent-highlight/20 flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-accent-highlight shrink-0" />
+            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
               <p className="text-xs sm:text-sm text-white/90 italic">
                 {isTelugu
                   ? '“దేశానికి సేవ చేయడం నా బాధ్యత... సంగీతంలో జీవించడం నా ఆత్మ.”'

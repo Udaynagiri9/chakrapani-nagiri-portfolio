@@ -65,11 +65,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-16">
       {/* Background Layers */}
       <div className="absolute inset-0 bg-bg-primary z-0">
-        {/* Subtle Ambient Radial Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[600px] bg-accent-red/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 left-10 w-[450px] h-[450px] bg-accent-darkRed/20 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-accent-highlight/10 rounded-full blur-[150px] pointer-events-none" />
-
         {/* Video or Static Background */}
         {useVideoBackground ? (
           <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -87,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
             <div className="absolute inset-0 bg-radial-vignette opacity-80" />
           </div>
         ) : (
-          <div className="absolute inset-0 w-full h-full opacity-35 bg-[radial-gradient(#1f0d10_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="absolute inset-0 w-full h-full opacity-20 bg-[radial-gradient(#333333_1px,transparent_1px)] [background-size:24px_24px]" />
         )}
       </div>
 
@@ -114,12 +109,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
           >
             {/* Dual Identity Top Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-              <span className="flex items-center gap-1.5 text-accent-highlight text-xs font-semibold uppercase tracking-wider font-helvetica">
+              <span className="flex items-center gap-1.5 text-neutral-300 text-xs font-semibold uppercase tracking-wider font-helvetica">
                 <Shield className="w-3.5 h-3.5" />
                 BSF Soldier
               </span>
               <span className="text-white/20">•</span>
-              <span className="flex items-center gap-1.5 text-red-400 text-xs font-semibold uppercase tracking-wider font-helvetica">
+              <span className="flex items-center gap-1.5 text-neutral-300 text-xs font-semibold uppercase tracking-wider font-helvetica">
                 <Mic2 className="w-3.5 h-3.5" />
                 Telugu Indian Idol S2 Top 7
               </span>
@@ -150,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                   useVideoBackground ? 'justify-center' : 'justify-center lg:justify-start'
                 }`}
               >
-                <span className="text-lg sm:text-xl font-medium text-accent-highlight tracking-wide font-helvetica">
+                <span className="text-lg sm:text-xl font-semibold text-white tracking-wide font-helvetica">
                   {isTelugu ? 'గాయకుడు' : 'Singer'}
                 </span>
                 <span className="text-white/40">|</span>
@@ -187,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
 
               {/* Secondary Tagline */}
               <div className="pt-1">
-                <span className="inline-block text-xs sm:text-sm font-medium text-accent-highlight tracking-widest uppercase border-b border-accent-highlight/30 pb-0.5 font-helvetica">
+                <span className="inline-block text-xs sm:text-sm font-medium text-neutral-400 tracking-widest uppercase border-b border-white/20 pb-0.5 font-helvetica">
                   "{t.quote}"
                 </span>
               </div>
@@ -211,7 +206,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                 {/* Primary CTA: Journey */}
                 <button
                   onClick={() => scrollTo('journey')}
-                  className="px-3 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-base text-white bg-accent-red hover:bg-accent-highlight border border-transparent transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-1 sm:gap-2 group font-helvetica cursor-pointer"
+                  className="px-3 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-base text-black bg-white hover:bg-neutral-200 border border-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-1 sm:gap-2 group font-helvetica cursor-pointer"
                 >
                   <span className="whitespace-nowrap">{isTelugu ? 'నా ప్రస్థానం' : t.exploreJourney}</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -222,7 +217,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                   onClick={() => scrollTo('music')}
                   className="px-3 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-base text-white bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-1 sm:gap-2 backdrop-blur-md font-helvetica cursor-pointer"
                 >
-                  <Mic2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-highlight" />
+                  <Mic2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                   <span className="whitespace-nowrap">{t.listenMusic}</span>
                 </button>
               </div>
@@ -250,7 +245,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                   }}
                   className="flex-1 sm:flex-initial px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm text-text-secondary hover:text-white bg-black/60 hover:bg-black/80 border border-white/15 transition-all flex items-center justify-center gap-2 font-helvetica cursor-pointer"
                 >
-                  <div className="w-5 h-5 rounded-full bg-accent-red/20 flex items-center justify-center text-accent-highlight">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-white">
                     <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
                   </div>
                   <span>{t.watchVideo}</span>
@@ -261,11 +256,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                   onClick={toggleVideoBg}
                   className={`px-3.5 py-2 rounded-full border transition-all text-xs font-helvetica flex items-center justify-center gap-1.5 cursor-pointer ${
                     useVideoBackground
-                      ? 'bg-accent-red text-white border-accent-highlight'
+                      ? 'bg-white text-black border-white font-bold'
                       : 'bg-white/5 border-white/10 hover:border-white/25 text-neutral-300'
                   }`}
                 >
-                  <Sparkles className="w-3 h-3 text-accent-highlight" />
+                  <Sparkles className="w-3 h-3 text-neutral-400" />
                   <span>
                     {useVideoBackground
                       ? (isTelugu ? 'బ్యాక్‌డ్రాప్ ఆఫ్' : 'Turn Off')
@@ -280,7 +275,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                     aria-label="Toggle video sound"
                     title={videoMuted ? 'Unmute' : 'Mute'}
                   >
-                    {videoMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-accent-highlight" />}
+                    {videoMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-white" />}
                   </button>
                 )}
               </div>
@@ -313,9 +308,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                       <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-black/30" />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
-                      {/* Static Clean Top Right Badge (NO BLINKING DOT) */}
-                      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-accent-highlight/40 text-[11px] font-semibold text-white font-helvetica">
-                        <Star className="w-3.5 h-3.5 text-accent-highlight fill-accent-highlight" />
+                      {/* Static Clean Top Right Badge */}
+                      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-semibold text-white font-helvetica">
+                        <Star className="w-3.5 h-3.5 text-neutral-300 fill-neutral-300" />
                         <span>Telugu Indian Idol S2</span>
                       </div>
 
@@ -339,7 +334,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
                               {isTelugu ? 'జవాన్ & టాప్ 7 గాయకుడు' : 'BSF Soldier & Vocal Artist'}
                             </p>
                           </div>
-                          <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-accent-highlight text-xs font-bold font-helvetica">
+                          <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-white text-xs font-bold font-helvetica">
                             <Award className="w-3.5 h-3.5" />
                             <span>TOP 7</span>
                           </div>
@@ -347,11 +342,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
 
                         <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/10 text-[11px] font-helvetica">
                           <div className="flex items-center gap-1.5 text-text-secondary">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-highlight" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                             <span>127K+ YouTube</span>
                           </div>
                           <div className="flex items-center gap-1.5 text-text-secondary">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-highlight" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                             <span>305K+ Instagram</span>
                           </div>
                         </div>
@@ -374,7 +369,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVideoModal, onStopAudio }) => 
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-1 h-2 rounded-full bg-accent-highlight"
+            className="w-1 h-2 rounded-full bg-white"
           />
         </div>
       </div>

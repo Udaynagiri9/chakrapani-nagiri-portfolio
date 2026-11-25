@@ -42,12 +42,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a0b0e;
+  background: #262626;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c1121f;
+  background: #404040;
 }
 
 /* Glassmorphism helpers */
@@ -67,8 +67,8 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(230, 57, 70, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(193, 18, 31, 0.25);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
 .glass-pill {

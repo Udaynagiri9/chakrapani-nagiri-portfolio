@@ -11,15 +11,11 @@ export const JourneyTimeline: React.FC = () => {
 
   return (
     <section id="journey" className="relative py-24 bg-bg-secondary overflow-hidden border-t border-white/5">
-      {/* Red ambient glows */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-accent-red/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-darkRed/15 rounded-full blur-[140px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Compass className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -33,11 +29,11 @@ export const JourneyTimeline: React.FC = () => {
 
         {/* Timeline Path */}
         <div className="relative">
-          {/* Central Vertical Glowing Line for Desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-accent-red/30 via-accent-highlight to-accent-darkRed/20 shadow-[0_0_15px_rgba(230,57,70,0.6)]" />
+          {/* Central Vertical Line for Desktop */}
+          <div className="hidden lg:block absolute left-1/2 top-4 bottom-4 w-px -translate-x-1/2 bg-white/15" />
 
           {/* Left Line for Mobile */}
-          <div className="lg:hidden absolute left-4 top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent-red/30 via-accent-highlight to-accent-darkRed/20 shadow-[0_0_15px_rgba(230,57,70,0.6)]" />
+          <div className="lg:hidden absolute left-4 top-4 bottom-4 w-px bg-white/15" />
 
           <div className="space-y-16 lg:space-y-24">
             {journeyMilestones.map((milestone, idx) => {
@@ -53,14 +49,13 @@ export const JourneyTimeline: React.FC = () => {
                   className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
                 >
                   {/* Central Node Badge */}
-                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-bg-primary border-2 border-accent-highlight items-center justify-center z-20 shadow-xl shadow-accent-red/50">
-                    <div className="w-3 h-3 rounded-full bg-accent-highlight animate-ping" />
-                    <div className="w-3 h-3 rounded-full bg-accent-highlight absolute" />
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-neutral-900 border border-white/20 items-center justify-center z-20">
+                    <div className="w-2.5 h-2.5 rounded-full bg-white" />
                   </div>
 
                   {/* Mobile Node Badge */}
-                  <div className="lg:hidden absolute left-4 -translate-x-1/2 w-8 h-8 rounded-full bg-bg-primary border-2 border-accent-highlight flex items-center justify-center z-20 shadow-lg shadow-accent-red/40">
-                    <div className="w-2.5 h-2.5 rounded-full bg-accent-highlight" />
+                  <div className="lg:hidden absolute left-4 -translate-x-1/2 w-6 h-6 rounded-full bg-neutral-900 border border-white/20 flex items-center justify-center z-20">
+                    <div className="w-2 h-2 rounded-full bg-white" />
                   </div>
 
                   {/* Left Column (Content if Even, Media if Odd on Desktop) */}
@@ -70,24 +65,24 @@ export const JourneyTimeline: React.FC = () => {
                     }`}
                   >
                     {/* Glass Card */}
-                    <div className="p-6 sm:p-8 rounded-3xl bg-bg-card/90 backdrop-blur-md border border-white/10 hover:border-accent-highlight/40 transition-all duration-300 shadow-xl group">
+                    <div className="p-6 sm:p-8 rounded-3xl bg-bg-card/90 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl group">
                       {/* Milestone Header */}
                       <div
                         className={`flex flex-wrap items-center gap-2 mb-3 ${
                           isEven ? 'lg:justify-end' : 'lg:justify-start'
                         }`}
                       >
-                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-accent-red/20 text-accent-highlight border border-accent-red/30">
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15">
                           {milestone.year}
                         </span>
                         <span className="flex items-center gap-1 text-[11px] font-medium text-text-muted px-2.5 py-1 rounded-full bg-white/5 border border-white/5">
-                          <Tag className="w-3 h-3 text-accent-highlight" />
+                          <Tag className="w-3 h-3 text-neutral-400" />
                           {milestone.tag[language]}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl sm:text-2xl font-serifDisplay font-bold text-white mb-2 group-hover:text-accent-highlight transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-serifDisplay font-bold text-white mb-2 group-hover:text-white transition-colors">
                         {milestone.title[language]}
                       </h3>
 
@@ -97,7 +92,7 @@ export const JourneyTimeline: React.FC = () => {
                           isEven ? 'lg:justify-end' : 'lg:justify-start'
                         }`}
                       >
-                        <MapPin className="w-3.5 h-3.5 text-accent-highlight shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-neutral-400 shrink-0" />
                         <span>{milestone.location[language]}</span>
                       </div>
 
@@ -123,7 +118,7 @@ export const JourneyTimeline: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
                       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90 px-3 py-1.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
-                        <span className="font-medium text-accent-highlight">
+                        <span className="font-medium text-neutral-300">
                           {milestone.tag[language]}
                         </span>
                         <span className="text-[11px] text-text-secondary">

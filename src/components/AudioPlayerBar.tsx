@@ -103,7 +103,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
         transition={{ type: 'spring', damping: 25, stiffness: 250 }}
         className="fixed bottom-0 inset-x-0 z-40 p-2 sm:p-4 pointer-events-none"
       >
-        <div className="max-w-4xl mx-auto rounded-2xl bg-black/90 backdrop-blur-2xl border border-accent-highlight/40 shadow-2xl p-3 sm:p-4 pointer-events-auto">
+        <div className="max-w-4xl mx-auto rounded-2xl bg-black/90 backdrop-blur-2xl border border-white/15 shadow-2xl p-3 sm:p-4 pointer-events-auto">
           <div className="flex items-center justify-between gap-3 sm:gap-6">
             
             {/* Song Info */}
@@ -116,7 +116,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
                 />
                 {isPlaying && (
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <Disc className="w-5 h-5 text-accent-highlight animate-spin" />
+                    <Disc className="w-5 h-5 text-white animate-spin" />
                   </div>
                 )}
               </div>
@@ -125,7 +125,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
                   <h4 className="text-xs sm:text-sm font-bold text-white truncate">
                     {currentSong.title[language]}
                   </h4>
-                  <span className="hidden sm:inline px-1.5 py-0.5 rounded text-[9px] font-bold bg-accent-red/20 text-accent-highlight uppercase">
+                  <span className="hidden sm:inline px-1.5 py-0.5 rounded text-[9px] font-semibold bg-white/10 text-neutral-300 border border-white/10 uppercase">
                     {currentSong.category}
                   </span>
                 </div>
@@ -142,7 +142,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
               <div className="flex items-center gap-3">
                 <button
                   onClick={onTogglePlay}
-                  className="w-9 h-9 rounded-full bg-accent-highlight hover:bg-accent-red text-white flex items-center justify-center transition-all shadow-md shadow-accent-red/40"
+                  className="w-9 h-9 rounded-full bg-white hover:bg-neutral-200 text-black flex items-center justify-center transition-all shadow-md cursor-pointer"
                   aria-label={isPlaying ? 'Pause' : 'Play'}
                 >
                   {isPlaying ? (
@@ -162,7 +162,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
                   max="100"
                   value={progress}
                   onChange={handleSeek}
-                  className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-accent-highlight"
+                  className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-white"
                 />
                 <span className="text-[10px] text-text-muted w-8">{duration}</span>
               </div>
@@ -172,7 +172,7 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
             <div className="flex items-center gap-2 md:hidden">
               <button
                 onClick={onTogglePlay}
-                className="w-9 h-9 rounded-full bg-accent-highlight text-white flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center cursor-pointer"
               >
                 {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
               </button>
@@ -182,10 +182,10 @@ export const AudioPlayerBar: React.FC<AudioPlayerBarProps> = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="p-2 rounded-lg text-text-secondary hover:text-white transition-colors"
+                className="p-2 rounded-lg text-text-secondary hover:text-white transition-colors cursor-pointer"
                 title={isMuted ? 'Unmute' : 'Mute'}
               >
-                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-accent-highlight" />}
+                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-white" />}
               </button>
 
               {currentSong.youtubeUrl && (

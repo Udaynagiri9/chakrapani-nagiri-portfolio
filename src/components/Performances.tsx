@@ -15,15 +15,11 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
 
   return (
     <section id="performances" className="relative py-24 bg-bg-secondary overflow-hidden border-t border-white/5">
-      {/* Background spotlights */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-accent-red/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-accent-darkRed/15 rounded-full blur-[150px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-xs font-semibold tracking-wider uppercase font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Film className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -59,14 +55,14 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-black/30 to-transparent" />
 
                 {/* Event Pill */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-xs font-semibold text-accent-highlight flex items-center gap-1.5 font-helvetica">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-xs font-semibold text-neutral-300 flex items-center gap-1.5 font-helvetica">
                   <Tv className="w-3 h-3" />
                   <span>{item.event[language]}</span>
                 </div>
 
-                {/* Center Play Button Overlay (Clean, NO GLOW) */}
+                {/* Center Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-accent-red group-hover:bg-accent-highlight text-white flex items-center justify-center border border-white/20 transform group-hover:scale-105 transition-all duration-200">
+                  <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white text-black flex items-center justify-center border border-white/30 transform group-hover:scale-105 transition-all duration-200 shadow-lg">
                     <Play className="w-7 h-7 fill-current ml-1" />
                   </div>
                 </div>
@@ -84,7 +80,7 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
 
               {/* Performance Info */}
               <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="text-xl sm:text-2xl font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors">
+                <h3 className="text-xl sm:text-2xl font-helvetica font-bold text-white group-hover:text-neutral-200 transition-colors">
                   {item.title[language]}
                 </h3>
                 <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-sans">
@@ -94,7 +90,7 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between font-helvetica">
                   <button
                     onClick={() => onOpenVideoModal(undefined, item.youtubeId, item.title[language])}
-                    className="text-sm font-bold text-accent-highlight hover:text-white flex items-center gap-2 transition-colors cursor-pointer"
+                    className="text-sm font-semibold text-white hover:text-neutral-300 flex items-center gap-2 transition-colors cursor-pointer"
                   >
                     <Play className="w-4 h-4 fill-current" />
                     <span>{t.watchModal}</span>
@@ -105,7 +101,7 @@ export const Performances: React.FC<PerformancesProps> = ({ onOpenVideoModal }) 
                       href={item.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-text-secondary hover:text-accent-highlight flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                      className="text-xs font-semibold text-text-secondary hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
                     >
                       <span>YouTube</span>
                       <ExternalLink className="w-3 h-3" />
