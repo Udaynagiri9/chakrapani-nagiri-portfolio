@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
             className="flex items-center space-x-2 sm:space-x-2.5 group text-left focus:outline-none cursor-pointer"
           >
             {/* Real uploaded portrait avatar */}
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 overflow-hidden shrink-0 group-hover:border-white/40 transition-all">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 overflow-hidden shrink-0 group-hover:border-accent-highlight transition-all">
               <img
                 src="/images/logo_avatar.jpg"
                 alt="Chakrapani Nagiri"
@@ -107,17 +107,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
               <div className="flex items-center gap-1.5">
                 <span
                   style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
-                  className="font-helvetica font-bold text-white tracking-wider text-[11px] sm:text-sm group-hover:text-neutral-200 transition-colors uppercase leading-none"
+                  className="font-helvetica font-bold text-white tracking-wider text-[11px] sm:text-sm group-hover:text-accent-highlight transition-colors uppercase leading-none"
                 >
                   {isTelugu ? 'చక్రపాణి నాగిరి' : 'CHAKRAPANI NAGIRI'}
                 </span>
-                <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[8px] sm:text-[9px] font-semibold bg-white/10 text-neutral-200 border border-white/15 font-helvetica">
+                <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[8px] sm:text-[9px] font-semibold bg-accent-red/20 text-accent-highlight border border-accent-red/30 font-helvetica">
                   BSF
                 </span>
               </div>
               <p className="text-[9px] sm:text-[10px] text-text-secondary tracking-widest uppercase hidden sm:flex items-center gap-1 font-helvetica mt-0.5">
                 <span>BSF Soldier</span>
-                <span className="text-white/40">•</span>
+                <span className="text-accent-highlight">•</span>
                 <span>Singer</span>
               </p>
             </div>
@@ -135,13 +135,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
                   onClick={() => handleLinkClick(link.id)}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 relative cursor-pointer ${
                     isActive
-                      ? 'text-white bg-white/10 border border-white/20 font-semibold'
+                      ? 'text-white bg-accent-red/40 border border-accent-highlight/50'
                       : link.isSpecial
-                      ? 'text-white hover:text-white bg-white/5 hover:bg-white/10 border border-white/10'
+                      ? 'text-accent-highlight hover:text-white bg-accent-red/10 hover:bg-accent-red/20 border border-accent-red/30'
                       : 'text-text-secondary hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-0.5 bg-accent-highlight rounded-full" />
+                  )}
                 </button>
               );
             })}
@@ -156,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
                 onClick={() => setLanguage('te')}
                 className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   isTelugu
-                    ? 'bg-white text-black font-semibold'
+                    ? 'bg-accent-red text-white'
                     : 'text-text-secondary hover:text-white'
                 }`}
               >
@@ -166,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   !isTelugu
-                    ? 'bg-white text-black font-semibold'
+                    ? 'bg-accent-red text-white'
                     : 'text-text-secondary hover:text-white'
                 }`}
               >
@@ -177,10 +180,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
             {/* Quick Contact CTA Button */}
             <button
               onClick={() => handleLinkClick('contact')}
-              className={`hidden sm:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer ${
+              className={`hidden sm:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold text-white transition-all cursor-pointer ${
                 currentPage === 'home' && activeSection === 'contact'
-                  ? 'bg-white text-black ring-2 ring-white/30 border border-white'
-                  : 'bg-white text-black hover:bg-neutral-200 border border-white'
+                  ? 'bg-accent-highlight ring-2 ring-white/40 border border-white'
+                  : 'bg-accent-red hover:bg-accent-highlight border border-white/20'
               }`}
             >
               {t.contact}
@@ -212,14 +215,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage = 'home', onNavigate
                     onClick={() => handleLinkClick(link.id)}
                     className={`text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer flex items-center justify-between ${
                       isActive
-                        ? 'bg-white text-black font-bold'
+                        ? 'bg-accent-red text-white shadow-lg'
                         : link.isSpecial
-                        ? 'bg-white/10 text-white border border-white/15'
+                        ? 'bg-accent-red/20 text-accent-highlight border border-accent-red/35'
                         : 'bg-white/[0.04] text-neutral-300 hover:text-white hover:bg-white/10 border border-white/5'
                     }`}
                   >
                     <span>{link.label}</span>
-                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-black" />}
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                   </button>
                 );
               })}

@@ -91,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Quick Links */}
           <div className="md:col-span-4 space-y-3 font-helvetica">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-white">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-accent-highlight">
               {isTelugu ? 'ముఖ్యమైన విభాగాలు' : 'Navigation'}
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs text-text-secondary">
@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <button onClick={() => handleNav('gallery')} className="text-left hover:text-white transition-colors py-1 cursor-pointer">
                 {isTelugu ? 'గ్యాలరీ' : 'Gallery'}
               </button>
-              <button onClick={() => onNavigate ? onNavigate('media') : null} className="text-left text-neutral-200 hover:text-white transition-colors py-1 cursor-pointer font-semibold">
+              <button onClick={() => onNavigate ? onNavigate('media') : null} className="text-left text-accent-highlight hover:text-white transition-colors py-1 cursor-pointer font-semibold">
                 {isTelugu ? 'మీడియా వార్తలు ★' : 'Media & Press ★'}
               </button>
               <button onClick={() => handleNav('contact')} className="text-left hover:text-white transition-colors py-1 cursor-pointer">
@@ -139,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </p>
               <p>Mandasa Mandal, Srikakulam</p>
               <p>Andhra Pradesh - 532264</p>
-              <div className="pt-2 border-t border-white/5 flex items-center gap-1.5 text-neutral-300 font-medium">
+              <div className="pt-2 border-t border-white/5 flex items-center gap-1.5 text-accent-highlight font-medium">
                 <Shield className="w-3.5 h-3.5" />
                 <span>Border Security Force</span>
               </div>
@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               href="https://udaynagiri.netmaxin.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-white hover:text-neutral-300 transition-colors inline-flex items-center gap-1 cursor-pointer underline decoration-white/40 hover:decoration-white"
+              className="font-bold text-accent-highlight hover:text-white transition-colors inline-flex items-center gap-1 cursor-pointer underline decoration-accent-highlight/40 hover:decoration-white"
             >
               <span>Uday Nagiri</span>
               <ExternalLink className="w-3.5 h-3.5" />

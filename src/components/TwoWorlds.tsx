@@ -13,11 +13,15 @@ export const TwoWorlds: React.FC = () => {
 
   return (
     <section id="two-worlds" className="relative py-24 bg-bg-primary overflow-hidden border-t border-white/5">
+      {/* Subtle ambient background glow */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-neutral-800/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-accent-red/10 rounded-full blur-[160px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-semibold tracking-wider uppercase font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-accent-highlight text-xs font-semibold tracking-wider uppercase font-helvetica">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{t.sectionBadge}</span>
           </div>
@@ -58,7 +62,7 @@ export const TwoWorlds: React.FC = () => {
               onClick={() => setActiveView('singer')}
               className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-colors duration-200 flex items-center gap-1.5 cursor-pointer ${
                 activeView === 'singer'
-                  ? 'bg-white text-black border border-white font-bold'
+                  ? 'bg-accent-red text-white border border-accent-highlight font-bold'
                   : 'bg-white/5 text-text-secondary hover:text-white border border-white/10'
               }`}
             >
@@ -162,22 +166,22 @@ export const TwoWorlds: React.FC = () => {
             }}
             className={`relative rounded-2xl sm:rounded-3xl overflow-hidden border ${
               activeView === 'singer'
-                ? 'border-neutral-400 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black'
-                : 'border-white/10 bg-gradient-to-b from-neutral-900/90 via-black to-[#0e0e0e]'
+                ? 'border-accent-highlight bg-gradient-to-b from-[#1f090c] via-black to-[#190a0d]'
+                : 'border-white/10 bg-gradient-to-b from-neutral-900/90 via-black to-[#190a0d]'
             }`}
           >
-            {/* Subtle Metallic Top Border */}
-            <div className="h-1 w-full bg-gradient-to-r from-neutral-400 via-neutral-200 to-transparent opacity-80" />
+            {/* Top Red Accent Bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-accent-red via-accent-highlight to-transparent" />
 
             <div className="p-5 sm:p-8 space-y-4 sm:space-y-6">
               {/* Header Badge & Title */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-white">
-                    <Mic2 className="w-5 h-5 text-neutral-200" />
+                  <div className="w-11 h-11 rounded-2xl bg-accent-red/20 border border-accent-highlight/40 flex items-center justify-center text-accent-highlight">
+                    <Mic2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 font-helvetica">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-accent-highlight font-helvetica">
                       Passionate Singer
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-helvetica font-bold text-white">
@@ -185,7 +189,7 @@ export const TwoWorlds: React.FC = () => {
                     </h3>
                   </div>
                 </div>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/15 text-neutral-300 font-helvetica">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-accent-red/20 border border-accent-red/30 text-accent-highlight font-helvetica">
                   {t.singerSubtitle}
                 </span>
               </div>
@@ -201,7 +205,7 @@ export const TwoWorlds: React.FC = () => {
                 
                 {/* Stage Watermark */}
                 <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 text-xs text-white flex items-center gap-2 font-helvetica">
-                  <Mic2 className="w-3.5 h-3.5 text-neutral-300" />
+                  <Mic2 className="w-3.5 h-3.5 text-accent-highlight" />
                   <span className="font-medium">
                     {isTelugu ? 'ప్రత్యక్ష గానం • తెలుగు వేదికలు' : 'Soulful Vocals • Stage Artistry'}
                   </span>
@@ -217,7 +221,7 @@ export const TwoWorlds: React.FC = () => {
               <div className="space-y-3 pt-3 border-t border-white/10 font-helvetica">
                 {t.singerPillars.map((pillar, idx) => (
                   <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-neutral-200">
-                    <div className="w-5 h-5 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 mt-0.5 text-white">
+                    <div className="w-5 h-5 rounded-full bg-accent-red/20 border border-accent-highlight/30 flex items-center justify-center shrink-0 mt-0.5 text-accent-highlight">
                       <Check className="w-3.5 h-3.5" />
                     </div>
                     <span>{pillar}</span>

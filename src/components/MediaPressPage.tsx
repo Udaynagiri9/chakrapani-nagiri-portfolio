@@ -14,6 +14,10 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
 
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent-red/10 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute bottom-40 right-10 w-[500px] h-[500px] bg-accent-darkRed/15 rounded-full blur-[180px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto relative z-10 space-y-10 sm:space-y-16">
 
         {/* Top Back Navigation Bar */}
@@ -22,11 +26,11 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
             onClick={onBackToHome}
             className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white text-xs font-semibold font-helvetica transition-all hover:-translate-x-1 cursor-pointer"
           >
-            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-300" />
+            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-highlight" />
             <span>{isTelugu ? '← ప్రధాన పేజీ' : '← Back to Portfolio'}</span>
           </button>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-[11px] sm:text-xs font-semibold uppercase tracking-wider font-helvetica">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-red/15 border border-accent-red/30 text-accent-highlight text-[11px] sm:text-xs font-bold uppercase tracking-wider font-helvetica">
             <Newspaper className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>{isTelugu ? 'జాతీయ మీడియా & ఇంటర్వ్యూలు' : 'National Press & Media'}</span>
           </div>
@@ -51,16 +55,16 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl sm:rounded-3xl bg-[#141414] border border-white/15 p-5 sm:p-10 shadow-2xl relative overflow-hidden"
+          className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#200a0d] via-[#12080a] to-[#1c080e] border border-accent-highlight/40 p-5 sm:p-10 shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-4 right-4 text-white/5 pointer-events-none">
+          <div className="absolute top-4 right-4 text-accent-red/10 pointer-events-none">
             <Flame className="w-44 h-44" />
           </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-neutral-300 text-xs font-semibold uppercase tracking-wider font-helvetica">
-                <Flame className="w-3.5 h-3.5 text-neutral-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/40 text-red-300 text-xs font-bold uppercase tracking-wider font-helvetica">
+                <Flame className="w-3.5 h-3.5 text-accent-highlight" />
                 <span>{isTelugu ? 'జాతీయ ట్రెండింగ్ వార్త' : 'National Trending Sensation'}</span>
               </div>
 
@@ -81,7 +85,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   href="https://www.indiatoday.in/trending-news/story/bsf-soldiers-soulful-ghar-kab-aaoge-from-border-2-rendition-is-viral-varun-dhawan-reacts-2851124-2026-01-13"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-semibold font-helvetica transition-colors shadow-lg cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-red hover:bg-accent-highlight text-white text-xs font-bold font-helvetica transition-colors shadow-lg cursor-pointer"
                 >
                   <span>{isTelugu ? 'ఇండియా టుడే కథనం చదవండి' : 'Read India Today Article'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -119,7 +123,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
         <div className="space-y-6">
           <div className="flex items-center justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-2.5">
-              <Newspaper className="w-5 h-5 text-white" />
+              <Newspaper className="w-5 h-5 text-accent-highlight" />
               <h2 className="text-2xl sm:text-3xl font-helvetica font-bold text-white">
                 {isTelugu ? 'ప్రముఖ వార్తా కథనాలు & పత్రికా విశేషాలు' : 'Verified News Articles & Editorial Stories'}
               </h2>
@@ -150,7 +154,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   </div>
 
                   {/* Headline */}
-                  <h3 className="text-base sm:text-lg font-helvetica font-bold text-white group-hover:text-neutral-200 transition-colors line-clamp-2">
+                  <h3 className="text-base sm:text-lg font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors line-clamp-2">
                     {article.title[language]}
                   </h3>
 
@@ -170,7 +174,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-neutral-300 hover:text-white border border-white/10 text-xs font-semibold font-helvetica transition-all duration-300 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 group-hover:bg-accent-red text-neutral-300 group-hover:text-white border border-white/10 group-hover:border-accent-highlight text-xs font-semibold font-helvetica transition-all duration-300 cursor-pointer"
                   >
                     <span>{isTelugu ? 'కథనం చదవండి' : 'Read Article'}</span>
                     <ExternalLink className="w-3 h-3" />
@@ -185,7 +189,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
         <div className="space-y-6 pt-6">
           <div className="flex items-center justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-2.5">
-              <Tv className="w-5 h-5 text-white" />
+              <Tv className="w-5 h-5 text-accent-highlight" />
               <h2 className="text-2xl sm:text-3xl font-helvetica font-bold text-white">
                 {isTelugu ? 'ప్రత్యేక వీడియో ఇంటర్వ్యూలు' : 'Exclusive Video Interviews'}
               </h2>
@@ -217,7 +221,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-black/40 to-transparent" />
 
                   {/* Channel Tag */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-semibold text-neutral-300 font-helvetica">
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold text-accent-highlight font-helvetica">
                     {interview.channel}
                   </div>
 
@@ -228,7 +232,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
 
                   {/* Center Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white/90 group-hover:bg-white text-black flex items-center justify-center border border-white/20 transform group-hover:scale-105 transition-all duration-200 shadow-md">
+                    <div className="w-14 h-14 rounded-full bg-accent-red group-hover:bg-accent-highlight text-white flex items-center justify-center border border-white/20 transform group-hover:scale-105 transition-all duration-200">
                       <Play className="w-6 h-6 fill-current ml-0.5" />
                     </div>
                   </div>
@@ -237,7 +241,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                 {/* Interview Info */}
                 <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-base font-helvetica font-bold text-white group-hover:text-neutral-200 transition-colors line-clamp-2">
+                    <h3 className="text-base font-helvetica font-bold text-white group-hover:text-accent-highlight transition-colors line-clamp-2">
                       {interview.title[language]}
                     </h3>
                     <p className="text-sm text-neutral-300 leading-relaxed font-sans mt-2 line-clamp-3">
@@ -249,7 +253,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
                   <div className="pt-4 border-t border-white/5 flex items-center justify-between font-helvetica">
                     <button
                       onClick={() => onOpenVideoModal(undefined, interview.youtubeId, interview.title[language])}
-                      className="text-sm font-semibold text-white hover:text-neutral-300 flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="text-sm font-bold text-accent-highlight hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <Play className="w-3.5 h-3.5 fill-current" />
                       <span>{isTelugu ? 'వీడియో చూడండి' : 'Watch Interview'}</span>
@@ -275,7 +279,7 @@ export const MediaPressPage: React.FC<MediaPressPageProps> = ({ onBackToHome, on
         <div className="text-center pt-8 border-t border-white/10">
           <button
             onClick={onBackToHome}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-black hover:bg-neutral-200 text-sm font-semibold font-helvetica transition-all shadow-xl hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-accent-red hover:bg-accent-highlight text-white text-sm font-bold font-helvetica transition-all shadow-xl hover:-translate-y-0.5 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>{isTelugu ? 'ప్రధాన పోర్ట్‌ఫోలియోకు తిరిగి వెళ్ళండి' : 'Back to Main Portfolio'}</span>

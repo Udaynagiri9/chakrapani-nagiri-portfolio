@@ -411,12 +411,15 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
 
   return (
     <section id="achievements" className="relative py-16 sm:py-24 bg-bg-primary overflow-hidden border-t border-white/5">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent-red/10 rounded-full blur-[180px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-            <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-[11px] sm:text-xs font-semibold tracking-wider uppercase font-helvetica">
+            <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-accent-red/10 border border-accent-red/20 text-accent-highlight text-[11px] sm:text-xs font-semibold tracking-wider uppercase font-helvetica">
               <Award className="w-3.5 h-3.5" />
               <span>{t.sectionBadge}</span>
             </div>
@@ -427,7 +430,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white text-[11px] sm:text-xs font-semibold font-helvetica transition-all cursor-pointer group/shuffle"
               title={isTelugu ? 'కార్డ్స్ రీ-షఫుల్ చేయండి' : 'Re-shuffle Playing Cards'}
             >
-              <Shuffle className={`w-3 h-3 text-neutral-300 transition-transform duration-500 ${isShuffling ? 'rotate-180' : 'group-hover/shuffle:rotate-180'}`} />
+              <Shuffle className={`w-3 h-3 text-accent-highlight transition-transform duration-500 ${isShuffling ? 'rotate-180' : 'group-hover/shuffle:rotate-180'}`} />
               <span>{isTelugu ? 'కార్డ్స్ షఫుల్' : 'Shuffle Deck'}</span>
             </button>
 
@@ -437,7 +440,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white text-[11px] sm:text-xs font-semibold font-helvetica transition-all cursor-pointer"
               title={isTelugu ? 'అన్ని కార్డులు తిప్పండి' : 'Flip All Playing Cards'}
             >
-              <RotateCcw className="w-3 h-3 text-neutral-300" />
+              <RotateCcw className="w-3 h-3 text-accent-highlight" />
               <span>{isTelugu ? 'కార్డ్స్ ఫ్లిప్' : 'Flip Cards'}</span>
             </button>
 
@@ -445,7 +448,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
             {onNavigateToMedia && (
               <button
                 onClick={onNavigateToMedia}
-                className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white text-[11px] sm:text-xs font-semibold font-helvetica transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-300 hover:text-white text-[11px] sm:text-xs font-semibold font-helvetica transition-all cursor-pointer"
               >
                 <Newspaper className="w-3.5 h-3.5" />
                 <span>{isTelugu ? 'మీడియా వార్తలు & ఇంటర్వ్యూలు →' : 'Media & Interviews →'}</span>
@@ -518,7 +521,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                     className="w-full h-full p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#141414] border border-white/10 hover:border-white/35 transition-colors duration-300 shadow-2xl flex flex-col justify-between relative overflow-hidden"
                   >
                     {/* Playing Card Corner Pips (Top-Left) */}
-                    <div className="absolute top-3.5 left-3.5 flex flex-col items-center leading-none text-[10px] font-black text-white/30 group-hover:text-neutral-300 transition-colors select-none font-helvetica pointer-events-none">
+                    <div className="absolute top-3.5 left-3.5 flex flex-col items-center leading-none text-[10px] font-black text-white/30 group-hover:text-accent-highlight transition-colors select-none font-helvetica pointer-events-none">
                       <span>{cardRanks[idx].rank}</span>
                       <span className="text-[9px] mt-0.5">{cardRanks[idx].suit}</span>
                     </div>
@@ -534,7 +537,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                     </button>
 
                     {/* Playing Card Corner Pips (Bottom-Right, Inverted) */}
-                    <div className="absolute bottom-3.5 right-3.5 rotate-180 flex flex-col items-center leading-none text-[10px] font-black text-white/30 group-hover:text-neutral-300 transition-colors select-none font-helvetica pointer-events-none">
+                    <div className="absolute bottom-3.5 right-3.5 rotate-180 flex flex-col items-center leading-none text-[10px] font-black text-white/30 group-hover:text-accent-highlight transition-colors select-none font-helvetica pointer-events-none">
                       <span>{cardRanks[idx].rank}</span>
                       <span className="text-[9px] mt-0.5">{cardRanks[idx].suit}</span>
                     </div>
@@ -565,7 +568,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                       <span className="text-3xl sm:text-4xl font-helvetica font-black text-white block tracking-tight">
                         {item.num}
                       </span>
-                      <span className="text-xs font-helvetica font-semibold uppercase tracking-wider text-neutral-300 block">
+                      <span className="text-xs font-helvetica font-bold uppercase tracking-wider text-accent-highlight block">
                         {item.label}
                       </span>
                     </div>
@@ -599,24 +602,24 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                       backfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)',
                     }}
-                    className="w-full h-full p-6 rounded-3xl bg-[#141414] border border-white/15 shadow-2xl flex flex-col justify-between absolute inset-0 overflow-hidden"
+                    className="w-full h-full p-6 rounded-3xl bg-gradient-to-br from-[#1a080b] via-[#100709] to-[#080808] border border-accent-highlight/40 shadow-2xl flex flex-col justify-between absolute inset-0 overflow-hidden"
                   >
-                    {/* Card Back Geometric Border */}
-                    <div className="absolute inset-2 rounded-2xl border border-white/10 pointer-events-none" />
+                    {/* Luxury Card Back Geometric Border */}
+                    <div className="absolute inset-2 rounded-2xl border border-accent-highlight/20 pointer-events-none" />
 
-                    {/* Corner Pips on Back */}
-                    <div className="absolute top-3.5 left-3.5 flex flex-col items-center leading-none text-[10px] font-black text-white/30 font-helvetica select-none pointer-events-none">
+                    {/* Corner Pips on Back (Gold) */}
+                    <div className="absolute top-3.5 left-3.5 flex flex-col items-center leading-none text-[10px] font-black text-amber-400/50 font-helvetica select-none pointer-events-none">
                       <span>{cardRanks[idx].rank}</span>
                       <span className="text-[9px] mt-0.5">{cardRanks[idx].suit}</span>
                     </div>
-                    <div className="absolute bottom-3.5 right-3.5 rotate-180 flex flex-col items-center leading-none text-[10px] font-black text-white/30 font-helvetica select-none pointer-events-none">
+                    <div className="absolute bottom-3.5 right-3.5 rotate-180 flex flex-col items-center leading-none text-[10px] font-black text-amber-400/50 font-helvetica select-none pointer-events-none">
                       <span>{cardRanks[idx].rank}</span>
                       <span className="text-[9px] mt-0.5">{cardRanks[idx].suit}</span>
                     </div>
 
                     {/* Top Tag & Flip Back Button */}
                     <div className="flex items-center justify-between z-10 pt-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-300 font-helvetica">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent-highlight font-helvetica">
                         ★ {isTelugu ? 'ధృవీకరించబడిన మైలురాయి' : 'Verified Honor'}
                       </span>
                       <button
@@ -631,7 +634,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
 
                     {/* Center Details */}
                     <div className="my-auto space-y-3 z-10 text-center px-1">
-                      <div className="w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center mx-auto text-white">
+                      <div className="w-10 h-10 rounded-full bg-accent-red/20 border border-accent-highlight/40 flex items-center justify-center mx-auto text-accent-highlight">
                         <Sparkles className="w-5 h-5" />
                       </div>
 
@@ -651,7 +654,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-black hover:bg-neutral-200 text-[11px] font-semibold font-helvetica transition-colors shadow-md w-full"
+                        className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-red hover:bg-accent-highlight text-white text-[11px] font-semibold font-helvetica transition-colors shadow-md w-full"
                       >
                         <span>{backInfo.articleLabel[language]}</span>
                         <ExternalLink className="w-3 h-3" />
@@ -671,15 +674,15 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="rounded-2xl sm:rounded-3xl bg-[#141414] border border-white/15 p-5 sm:p-12 shadow-2xl relative overflow-hidden"
+          className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-bg-card via-black to-[#1c080b] border border-accent-highlight/30 p-5 sm:p-12 shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-4 right-4 text-white/5">
+          <div className="absolute top-4 right-4 text-accent-red/20">
             <Star className="w-32 h-32" />
           </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/15 text-neutral-300 text-xs sm:text-sm font-semibold uppercase tracking-wider font-helvetica">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-red/20 border border-accent-red/40 text-accent-highlight text-xs sm:text-sm font-bold uppercase tracking-wider font-helvetica">
                 <Sparkles className="w-4 h-4" />
                 <span>{t.standingOvationTitle}</span>
               </div>
@@ -705,7 +708,7 @@ export const Achievements: React.FC<AchievementsProps> = ({ onOpenVideoModal, on
                 ].map((name, i) => (
                   <span
                     key={i}
-                    className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold font-helvetica bg-white/5 border border-white/15 text-neutral-200 hover:border-white/30 transition-colors"
+                    className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold font-helvetica bg-white/5 border border-white/15 text-neutral-200 hover:border-accent-highlight/40 transition-colors"
                   >
                     ★ {name}
                   </span>

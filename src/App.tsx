@@ -116,7 +116,7 @@ const MainContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary text-text-primary selection:bg-white selection:text-black">
+    <div className="relative min-h-screen bg-bg-primary text-text-primary selection:bg-accent-red selection:text-white">
       {/* Background Film Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none z-30 film-grain" />
 
